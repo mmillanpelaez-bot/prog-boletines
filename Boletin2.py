@@ -1,3 +1,4 @@
+print('Boletín 2.')
 # 1. Algoritmo que calcula o área dun triángulo.
 base = 4
 height = 3

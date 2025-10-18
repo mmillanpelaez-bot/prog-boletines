@@ -1,3 +1,5 @@
+print('Boletín 5.')
+
 # 1. Escribir un ciclo definido para imprimir por pantalla tódolos números entre	10 e 20.
 print("Ejercicio 1.")
 for number in range(10,21):
