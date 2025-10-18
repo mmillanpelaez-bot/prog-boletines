@@ -1,9 +1,15 @@
-print('Boletín 2.')
+print('Boletín 2: Algorítmia')
+
+# Menú selector de ejercicio
+from functions import exercise_menu
+exercise_menu()
+
 # 1. Algoritmo que calcula o área dun triángulo.
 base = 4
 height = 3
 area = base*height
 print("El area del triángulo es:", area)
+
 # 2.
 
 # 3. Algoritmo que cambia euros a dólares.

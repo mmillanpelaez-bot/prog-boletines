@@ -1,4 +1,4 @@
-print('Boletín 4.')
+print('Boletín 4: Condicionales')
 # 1.
 print("Ejercicio 1")
 #Vendas anuais			Artigo de consumo

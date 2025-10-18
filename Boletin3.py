@@ -1,2 +1,2 @@
-print('Boletín 3.')
+print('Boletín 3: Condicionales')
 
