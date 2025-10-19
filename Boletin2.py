@@ -1,8 +1,7 @@
 print('Boletín 2: Algorítmia')
 
 # Menú selector de ejercicio
-##from functions import exercise_menu
-##exercise_menu()
+
 
 # 1. Algoritmo que calcula o área dun triángulo.
 def boletin2_1():
