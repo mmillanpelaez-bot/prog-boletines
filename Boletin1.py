@@ -2,9 +2,9 @@ print('Boletín 1.')
 
 # 1.
 def ejercicio1_boletin1():
-    print("Ejercicio 1.")
+    print("\n--- Ejercicio 1 ---")
 
-    print('1. Resultado das expresións:')
+    print('Resultado das expresións:')
     a = ((3 + 2) % 2 - 15) / 2 * 5
     b = (6 + 6 / 7) + 35 / 2 -8 * 5 / 4 * 2
     c = 3 + 6 * 14 % 3
@@ -13,59 +13,61 @@ def ejercicio1_boletin1():
     f = 37 / 42 - 2
     g = 9 * 2 / 3 * 25 * 3
     h = (7 * 3 - 4 * 4) * 2 / 4 * 2
-
-    print('a = ',a)
-    print('b = ',b)
-    print('c = ',c)
-    print('d = ',d)
-    print('e = ',e)
-    print('f = ',f)
-    print('g = ',g)
-    print('h = ',h)
+    
+    print(f'a = {a}')
+    print(f'b = {b}')
+    print(f'c = {c}')
+    print(f'd = {d}')
+    print(f'e = {e}')
+    print(f'f = {f}')
+    print(f'g = {g}')
+    print(f'h = {h}') 
+    
 ejercicio1_boletin1()
 
 # 2.
 def ejercicio2_boletin1():
-    print("Ejercicio 2.")
+    print("\n--- Ejercicio 2 ---")
 
-    print('2. Variables non válidos:')
+    print('Variables non válidos:')
     print('Invalidos en (a): Salto- mortal, salto + mortal, 2salto, "salto"')
     print("Invalidos en (b): cantidade total")
 ejercicio2_boletin1()
 
 # 3.
 def ejercicio3_boletin1():
-    print("Ejercicio 3.")
+    print("\n--- Ejercicio 3 ---")
 
-    print('3. Expresar, utilizando operadores aritméticos:')
+    print('Expresar, utilizando operadores aritméticos:')
     print('a) (m + n) / n')
     print('b) ((m + n) / p) / ((p - r) / s)')
     print('c) (m + 4) / (p - q)')
     print('d) (c * r * t / 100)')
     print('e) (m + n) / (p + (q / r))')
     print('f) (m / n) * (p + q)')
-    print('g) (n(1 + i) ** t) / ((1 + i) ** t - 1)')
+    print('g) (n * (1 + i) ** t) / ((1 + i) ** t - 1)')
 ejercicio3_boletin1()
 
 # 4.
 def ejercicio4_boletin1():
-    print("Ejercicio 4.")
-
-    print('4. Avalia as seguintes expresións:')
-    print('a) True and True == False'' ->', False)
-    print('b) not False == True'' ->', True)
-    print('c) (True and True) or False == True'' ->', True)
-    print('d) (False or False) and False != True'' ->', False)
-    print('e) (not(True and False)) == False'' ->', False)
-    print('f) “12” + “12” == “24”'' ->', False,'-> "1212"')
-    print('g) “34” + “43” == “3443”'' ->', True)
-    print('h) 12 + 12 == 24'' ->', True)
-    print('i) 34 + 43 == “3443”'' ->', False, '-> 77')
+    print("\n--- Ejercicio 4 ---")
+    
+    print('Avalia as seguintes expresións:')
+    print(f'a) True and True == False -> {True and True == False}')
+    print(f'b) not False == True -> {not False == True}')
+    print(f'c) (True and True) or False == True -> { (True and True) or False == True }')
+    print(f'd) (False or False) and False != True -> { (False or False) and False != True }')
+    print(f'e) (not(True and False)) == False -> { (not(True and False)) == False }')
+    print(f'f) “12” + “12” == “24” ->', False,'-> "1212"')
+    print(f'g) “34” + “43” == “3443” ->', True)
+    print(f'h) 12 + 12 == 24 ->', True)
+    print(f'i) 34 + 43 == “3443” ->', False, '-> 77')
 ejercicio4_boletin1()
 
 # 5.
 def ejercicio5_boletin1():
-    print('5.  Avaliar espresións, tendo en conta as variables')
+    print("\n--- Ejercicio 5 ---")
+    print('Avaliar espresións, tendo en conta as variables')
     def ejercicio5a():
         i = 1
         j = 0
