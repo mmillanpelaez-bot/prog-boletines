@@ -1,0 +1,44 @@
+def menu_boletines():
+    print("\n--- Menú de Boletines ---")
+    print("1. Boletín 1: ")
+    print("2. Boletín 2: Algorítmia")
+    print("3. Boletín 3")
+    print("4. Boletín 4")
+    print("5. Boletín 5")
+    print("6. Boletín 6")
+    print("7. Boletín 7")
+    print("8. Boletín 8")
+    print("0. Salir")
+
+    choice = input("Seleccione un boletín: ")
+
+    if choice == '1':
+        from Boletin1 import menu_boletin1
+        menu_boletin1()
+    elif choice == '2':
+        from Boletin2 import menu_boletin2
+        menu_boletin2()
+    elif choice == '3':
+        from Boletin3 import menu_boletin3
+        menu_boletin3()
+    elif choice == '4':
+        from Boletin4 import menu_boletin4
+        menu_boletin4()
+    elif choice == '5':
+        from Boletin5 import menu_boletin5
+        menu_boletin5()
+    elif choice == '6':
+        from Boletin6 import menu_boletin6
+        menu_boletin6()
+    elif choice == '7':
+        from Boletin7 import menu_boletin7
+        menu_boletin7()
+    elif choice == '8':
+        from Boletin8 import menu_boletin8
+        menu_boletin8()
+    elif choice == '0':
+        print("Saliendo del programa.")
+    else:
+        print("Opción no válida. Inténtelo de nuevo.")
+        
+menu_boletines()
