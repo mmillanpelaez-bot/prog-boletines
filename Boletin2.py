@@ -1,19 +1,39 @@
 print('Boletín 2: Algorítmia')
 
 # Menú selector de ejercicio
-from functions import exercise_menu
-exercise_menu()
+##from functions import exercise_menu
+##exercise_menu()
 
 # 1. Algoritmo que calcula o área dun triángulo.
-base = 4
-height = 3
-area = base*height
-print("El area del triángulo es:", area)
+def boletin2_1():
 
-# 2.
+    print("\n--- Ejercicio 1 ---")
+    print("Cálculo do área dun triángulo.")
+
+    base = 4
+    height = 3
+    area = base*height/2
+    print(f'El area del triángulo es:{area}')
+
+boletin2_1()
+
+# 2. Algoritmo que calcula o área dun cadrado.
+def boletin2_2():
+
+    print("\n--- Ejercicio 2 ---")
+    print("Cálculo do área dun cadrado.")
+
+    side = 3
+    area = side**2
+    print(f'El area del cuadrado es: {area}')
+
+boletin2_2()
 
 # 3. Algoritmo que cambia euros a dólares.
-def eur_to_usd():
+def boletin2_3():
+
+    print("\n--- Ejercicio 3 ---")
+    print("Cambio de euros a dólares.")
 
     def get_exchange_rate():
         try:
@@ -39,4 +59,4 @@ def eur_to_usd():
 
     print(f"{euros} € = {dolares:.2f} $ (rate: {exchange_rate:.4f})")
 
-eur_to_usd()
+boletin2_3()
