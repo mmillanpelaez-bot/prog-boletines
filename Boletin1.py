@@ -175,7 +175,9 @@ def boletin1_5():
 
 
 def menu_boletin1():
+
     while True:
+        
         print("\n--- Menú de Ejercicios Boletín 1 ---")
         print("1. Resultado de las expresiones")
         print("2. Variables no válidos")
