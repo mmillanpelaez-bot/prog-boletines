@@ -10,18 +10,18 @@ print("Ejercicio 1")
 # 2. Area calculator
 print("Ejercicio 2")
 while True:
-# print table
-    print("-----------------------")
-    print ("--Calculador de Areas--")
-    print("-----------------------")
-    print("-----1. Rectangulo-----")
-    print("-----2. Triángulo------")
-    print("-----3. Círculo--------")
-    print("-----4. Salir----------")
-    print("-----------------------")
-# ask input
+
+    # print table
+    print ("\n--Calculador de Areas--")
+    print("1. Rectangulo")
+    print("2. Triángulo")
+    print("3. Círculo")
+    print("4. Salir")
+
+    # ask input
     option = input("Selecciona un número: ")
-# rectangle
+
+    # rectangle
     if option == "1":
         def area_rectangle():
             length_str = input("Escribe el largo del rectángulo: ")
@@ -31,7 +31,8 @@ while True:
             area = lenght*width
             print("El area del rectángulo es:", area)
         area_rectangle()
-# triangle
+
+    # triangle
     elif option == "2":
         def area_triangle():
             base_str = input("Escribe la base del triángulo: ")
@@ -41,7 +42,8 @@ while True:
             area = base*height
             print("El area del triángulo es:", area)
         area_triangle()
-# circle
+
+    # circle
     elif option == "3":
         def area_circle():
             from math import pi
@@ -50,10 +52,12 @@ while True:
             area = pi*radius**2
             print("El area del círculo es:", area)
         area_circle()
-# break option
+
+    # break option
     elif option == "4":
         print("¡Hasta la vista!")
         break
-# else print error
+
+    # else print error
     else: print("Error: Por favor elija un valor correcto.")
 
