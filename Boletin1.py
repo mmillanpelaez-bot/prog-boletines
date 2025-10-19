@@ -68,52 +68,53 @@ ejercicio4_boletin1()
 def ejercicio5_boletin1():
     print("\n--- Ejercicio 5 ---")
     print('Avaliar espresións, tendo en conta as variables')
-    def ejercicio5a():
-        i = 1
-        j = 0
-        k = 1
-        print('a = ', i + k <= j - k * 3 and k >= 2)
-    ejercicio5a()
-    def ejercicio5b():
-        i = 3
-        j = 2
-        k = -1
-        print('b = ', i == 3 or j <= 2 and k > 0)
-    ejercicio5b()
-    def ejercicio5c():
-        tipo = 10
-        rede = 7.5
-        print('c = ', tipo < rede + 1.5)
-    ejercicio5c()
-    def ejercicio5d():
-        ano = 1993
-        print('d = ', ano % 400 == 0)
-    ejercicio5d()
-    def ejercicio5e():
-        print('e = ', 3 == 2 or 5 > 1 + 1)
-    ejercicio5e()
-    def ejercicio5f():
-        print('f = ', 5 - 2 > 4 and not(0,5 == 1 / 5))
-    ejercicio5f()
-    def ejercicio5g():
-        a = 2
-        b = 5
-        c = 6
-        d = 10
-        print('g = ', a >= b or a >= c and a <d)
-    ejercicio5g()
-    def ejercicio5h():
-        a = 2
-        b = 5
-        c = 6
-        d = 10
-        print('h = ', a + b < c and a + c < d or 2 * a < a + b)
-    ejercicio5h()
-    def ejercicio5i():
-        a = 2
-        b = 5
-        c = 6
-        d = 10
-        print('i = ', not(a * b < d) and not(a * b < c) or b + c <= d)
-    ejercicio5i()
+    
+   # a)
+    i = 1
+    j = 0
+    k = 1
+    print(f'a = {i + k <= j - k * 3 and k >= 2}')
+
+    # b)
+    i = 3
+    j = 2
+    k = -1
+    print(f'b = {i == 3 or j <= 2 and k > 0}')
+
+    # c)
+    tipo = 10
+    rede = 7.5
+    print(f'c = {tipo < rede + 1.5}')
+
+    # d)
+    ano = 1993
+    print(f'd = {ano % 400 == 0}')
+
+    # e)
+    print(f'e = {3 == 2 or 5 > 1 + 1}')
+
+    # f)
+    print(f'f = {5 - 2 > 4 and not(0.5 == 1 / 5)}')
+
+    # g)
+    a = 2
+    b = 5
+    c = 6
+    d = 10
+    print(f'g = {a >= b or a >= c and a < d}')
+
+    # h)
+    a = 2
+    b = 5
+    c = 6
+    d = 10
+    print(f'h = {a + b < c and a + c < d or 2 * a < a + b}')
+
+    # i)
+    a = 2
+    b = 5
+    c = 6
+    d = 10
+    print(f'i = {not(a * b < d) and not(a * b < c) or b + c <= d}')
+
 ejercicio5_boletin1()
