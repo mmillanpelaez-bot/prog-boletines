@@ -1,4 +1,4 @@
-print('Boletín 5: Búcles')
+print('\nBoletín 5: Búcles')
 
 # 1. Escribir un ciclo definido para imprimir por pantalla tódolos números entre	10 e 20.
 print("Ejercicio 1.")

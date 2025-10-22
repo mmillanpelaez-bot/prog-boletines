@@ -1,4 +1,4 @@
-print('Boletín 1.')
+print('\nBoletín 1.')
 
 # 1.
 def boletin1_1():

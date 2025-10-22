@@ -1,1 +1,1 @@
-print('Boletín 7.')
+print('\nBoletín 7.')
