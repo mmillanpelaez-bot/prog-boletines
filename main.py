@@ -1,3 +1,13 @@
+"""
+needs some polish:
+imports at the top
+less if statements
+automate
+make scalable
+diccionary
+"""
+
+
 def menu_boletines():
     print("\n--- Menú de Boletines ---")
     print("1. Boletín 1: Expresiones y booleanos")
