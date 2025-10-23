@@ -1,0 +1,2 @@
+print('\nBoletín 6.')
+

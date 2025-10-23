@@ -1,2 +1,0 @@
-print('\nBoletín 6.')
-

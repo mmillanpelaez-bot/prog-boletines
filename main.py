@@ -13,13 +13,13 @@ def menu_boletines():
     choice = input("Seleccione un boletín: ")
 
     if choice == '1':
-        from Boletin1 import menu_boletin1
+        from boletines.Boletin1 import menu_boletin1
         menu_boletin1()
     elif choice == '2':
-        from Boletin2 import menu_boletin2
+        from boletines.Boletin2 import menu_boletin2
         menu_boletin2()
     elif choice == '3':
-        from Boletin3 import menu_boletin3
+        from boletines.Boletin3 import menu_boletin3
         menu_boletin3()
     elif choice == '4':
         from Boletin4 import menu_boletin4

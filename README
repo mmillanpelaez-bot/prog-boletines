@@ -17,7 +17,7 @@ No hace falta instalar nada extra, solo tener Python para ejecutar los archivos.
 
 ## Uso
 
-Puedes abrir cualquier archivo (por ejemplo, `Boletín1.py`, `Boletín2.py`, etc.) y ejecutarlo con:
+Puedes abrir cualquier archivo (por ejemplo, `Boletin1.py`, `Boletin2.py`, etc.) y ejecutarlo con:
 
 ```
 python Boletín1.py

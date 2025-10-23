@@ -1,3 +1,5 @@
+import requests
+
 print('\nBoletín 2: Algorítmia')
 
 # Menú selector de ejercicio
@@ -36,7 +38,6 @@ def boletin2_3():
 
     def get_exchange_rate():
         try:
-            import requests
             # Try to fetch the live rate from Frankfurter API
             url = "https://api.frankfurter.dev/v1/latest?from=EUR&to=USD"
             response = requests.get(url, timeout=5)  # timeout in seconds

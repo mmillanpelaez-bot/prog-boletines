@@ -1,3 +1,5 @@
+from math import pi
+
 print('\nBoletín 4: Condicionales')
 # 1.
 print("Ejercicio 1")
@@ -50,7 +52,6 @@ def boletin4_2():
         # circle
         elif option == "3":
             def area_circle():
-                from math import pi
                 radius_str = input("Escribe el radio del círculo: ")
                 radius = float(radius_str)
                 area = pi*radius**2
