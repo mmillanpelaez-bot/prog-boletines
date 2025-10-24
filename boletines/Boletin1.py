@@ -3,8 +3,7 @@ print('\nBoletín 1.')
 # 1.
 def boletin1_1():
 
-    print("\n--- Ejercicio 1 ---")
-    print('Resultado das expresións:')
+    print("\n--- Ejercicio 1: Resultado de las expresiones ---")
     
     print(f'a = {((3 + 2) % 2 - 15) / 2 * 5}') # Resultado: -35.0
     print(f'b = {(6 + 6 / 7) + 35 / 2 -8 * 5 / 4 * 2}') # Resultado: 4.357142857142858
