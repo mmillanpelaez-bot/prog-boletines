@@ -203,4 +203,5 @@ def menu_boletin1():
         else:  # else print error
             print("Opción no válida. Inténtelo de nuevo.")
 
-menu_boletin1()
+# if __name__ == "__main__": #for testing purposes
+    menu_boletin1()
