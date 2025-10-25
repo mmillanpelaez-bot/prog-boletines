@@ -183,9 +183,9 @@ def menu_boletin1():
         print("3. Expresar con operadores aritméticos")
         print("4. Evaluar expresiones lógicas")
         print("5. Evaluar expresiones con variables")
-        print("6. Salir")
+        print("0. Salir")
 
-        choice = input("Seleccione un ejercicio (1-6): ")
+        choice = input("Seleccione un ejercicio: ")
 
         if choice == '1':
             boletin1_1()
@@ -197,7 +197,7 @@ def menu_boletin1():
             boletin1_4()
         elif choice == '5':
             boletin1_5()
-        elif choice == '6': # break option
+        elif choice == '0': # break option
             print("\nSaliendo del menú de Boletín 1.")
             break
         else:  # else print error
