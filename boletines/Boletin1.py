@@ -198,7 +198,7 @@ def menu_boletin1():
         elif choice == '5':
             boletin1_5()
         elif choice == '0': # break option
-            print("\nSaliendo del menú de Boletín 1.")
+            print("\nSaliendo del menú del Boletín 1.")
             break
         else:  # else print error
             print("Opción no válida. Inténtelo de nuevo.")

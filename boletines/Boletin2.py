@@ -2,9 +2,6 @@ import requests
 
 print('\nBoletín 2: Algorítmia')
 
-# Menú selector de ejercicio
-
-
 # 1. Algoritmo que calcula o área dun triángulo.
 def boletin2_1():
 
@@ -16,8 +13,6 @@ def boletin2_1():
     area = base*height/2
     print(f'El area del triángulo es:{area}')
 
-boletin2_1()
-
 # 2. Algoritmo que calcula o área dun cadrado.
 def boletin2_2():
 
@@ -27,8 +22,6 @@ def boletin2_2():
     side = 3
     area = side**2
     print(f'El area del cuadrado es: {area}')
-
-boletin2_2()
 
 # 3. Algoritmo que cambia euros a dólares.
 def boletin2_3():
@@ -58,8 +51,6 @@ def boletin2_3():
     dolares = euros * exchange_rate
 
     print(f"{euros} € = {dolares:.2f} $ (rate: {exchange_rate:.4f})")
-
-boletin2_3()
 
 # 4.
 """
@@ -95,6 +86,35 @@ def boletin2_4():
     else:
         print('cociente = Error: No se puede dividir entre 0')
 
-boletin2_4()
-
 # 5.
+def boletin2_5():
+
+
+def menu_boletin2():
+    while True:
+
+        print("\n--- Menú de Ejercicios Boletín 1 ---")
+        print("1. Resultado de las expresiones")
+        print("2. Variables no válidos")
+        print("3. Expresar con operadores aritméticos")
+        print("4. Evaluar expresiones lógicas")
+        print("5. Evaluar expresiones con variables")
+        print("0. Salir")
+
+        choice = input("Seleccione un ejercicio: ")
+
+        if choice == '1':
+            boletin2_1()
+        elif choice == '2':
+            boletin2_2()
+        elif choice == '3':
+            boletin2_3()
+        elif choice == '4':
+            boletin2_4()
+        elif choice == '5':
+            boletin2_5()
+        elif choice == '0':  # break option
+            print("\nSaliendo del menú del Boletín 1.")
+            break
+        else:  # else print error
+            print("Opción no válida. Inténtelo de nuevo.")
