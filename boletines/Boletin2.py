@@ -2,7 +2,7 @@ import requests
 
 print('\nBoletín 2: Algorítmia')
 
-# 1. Algoritmo que calcula o área dun triángulo.
+# 1. Algoritmo que calcula el área de un triángulo.
 def boletin2_1():
 
     print("\n--- Ejercicio 1 ---")
@@ -13,11 +13,11 @@ def boletin2_1():
     area = base*height/2
     print(f'El area del triángulo es:{area}')
 
-# 2. Algoritmo que calcula o área dun cadrado.
+# 2. Algoritmo que calcula el área de un cuadrado.
 def boletin2_2():
 
     print("\n--- Ejercicio 2 ---")
-    print("Cálculo do área dun cadrado.")
+    print("Cálculo del área de un cuadrado.")
 
     side = 3
     area = side**2
@@ -52,7 +52,7 @@ def boletin2_3():
 
     print(f"{euros} € = {dolares:.2f} $ (rate: {exchange_rate:.4f})")
 
-# 4.
+# 4. Secuencia algebráica
 """
 1. INICIO
 2. PEDIR 'Introduce el primer numero: 
@@ -72,11 +72,10 @@ def boletin2_3():
     MOSTRAR 'No se puede dividir entre 0'
 14. FIN
 """
-
 def boletin2_4():
 
-    num1 = float(input('Write the first number: '))
-    num2 = float(input('Write the second number: '))
+    num1 = float(input('Escribe el primer número: '))
+    num2 = float(input('Escribe el segundo número: '))
 
     print(f'suma = {num1 + num2}')
     print(f'resta = {num1 - num2}')
@@ -86,19 +85,21 @@ def boletin2_4():
     else:
         print('cociente = Error: No se puede dividir entre 0')
 
-# 5.
+# 5. milla náutica a metro
 def boletin2_5():
-
+    mllmar = float(input("Distancia en millas marinas: "))
+    mtr = mllmar * 1852
+    print(f"Distancia en metros: {mtr}")
 
 def menu_boletin2():
     while True:
 
-        print("\n--- Menú de Ejercicios Boletín 1 ---")
-        print("1. Resultado de las expresiones")
-        print("2. Variables no válidos")
-        print("3. Expresar con operadores aritméticos")
-        print("4. Evaluar expresiones lógicas")
-        print("5. Evaluar expresiones con variables")
+        print("\n--- Menú de Ejercicios del Boletín 2 ---")
+        print("1. Calculador del área de un triángulo")
+        print("2. Cálculo del área de un cuadrado")
+        print("3. Cambio de euros a dólares")
+        print("4. Secuencia algebráica")
+        print("5. Milla náutica a metro")
         print("0. Salir")
 
         choice = input("Seleccione un ejercicio: ")
@@ -114,7 +115,7 @@ def menu_boletin2():
         elif choice == '5':
             boletin2_5()
         elif choice == '0':  # break option
-            print("\nSaliendo del menú del Boletín 1.")
+            print("\nSaliendo del menú del Boletín 2.")
             break
         else:  # else print error
             print("Opción no válida. Inténtelo de nuevo.")
