@@ -172,7 +172,7 @@ def boletin1_5():
     a=2; b=5; c=6; d=10
     print(f"i) {not(a * b < d) and not(a * b < c) or b + c <= d}") # Resultado: True
 
-
+# menú
 def menu_boletin1():
 
     while True:
