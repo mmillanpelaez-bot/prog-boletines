@@ -1,7 +1,7 @@
 print('\nBoletín 3: Condicionales')
 
 # 1. Confirmador de números naturales
-def boletin3_1():
+def ejercicio1():
     while True:
         try:
             entrada = float(input("\nEscriba un número: "))
@@ -18,7 +18,7 @@ def boletin3_1():
 # 2- Escribe un programa no que se tecleen dous números. Se o
 # primeiro é maior ou igual que o segundo,visualizaremos a
 # resta. En calquera caso visualizaremos a suma.
-def boletin3_2():
+def ejercicio2():
     while True:
         try:
             num1 = float(input("\nEscriba el primer número: "))
@@ -36,7 +36,7 @@ def boletin3_2():
 # 3- Codificar o programa que o teclear un número por teclado,
 # mostre por consola o signo “ + “ se o número é positivo, o signo
 # “ –“ se é negativo e “ 0 “ se é cero.
-def boletin3_3():
+def ejercicio3():
     while True:
 
         try:
@@ -56,7 +56,7 @@ def boletin3_3():
 # 4- Coñecidos, o nome e o peso de dúas persoas, o programa
 # escribirá por consola os datos da persoa que pesa máis e a
 # diferenza de peso entre elas.
-def boletin3_4():
+def ejercicio4():
     nome1 = input("¿Cómo se llama la primera persona? ")
     nome2 = input("¿Cómo se llama la segunda persona? ")
 
@@ -72,4 +72,4 @@ def boletin3_4():
 
 # 5- Dados 3 números que se supoñen distintos, indicar cal é o
 # maior.
-def boletin3_5():
+def ejercicio5():

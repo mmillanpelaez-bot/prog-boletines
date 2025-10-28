@@ -1,16 +1,19 @@
 from math import pi
 
 print('\nBoletín 4: Condicionales')
+
 # 1.
-print("Ejercicio 1")
-#Vendas anuais			Artigo de consumo
-#baixo <= 100 produtos
-#>100 e < = 500			medio
-#> 500 e < = 1000			alto
-#> 1000 				primeira necesidade
+def ejercicio1():
+    print("Ejercicio 1")
+    Vendas anuais			Artigo de consumo
+    #baixo <= 100 produtos
+    #>100 e < = 500			medio
+    #> 500 e < = 1000			alto
+    #> 1000 				primeira necesidade
+
 
 # 2. Area calculator
-def boletin4_2():
+def ejercicio2():
 
     print("\n--- Ejercicio 2 ---")
     print("Calculador de áreas de figuras geométricas.")

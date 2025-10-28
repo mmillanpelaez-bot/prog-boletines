@@ -1,7 +1,7 @@
 print('\nBoletín 1.')
 
 # 1.
-def boletin1_1():
+def ejercicio1():
 
     print("\n--- Ejercicio 1: Resultado de las expresiones ---")
     
@@ -15,7 +15,7 @@ def boletin1_1():
     print(f'h = {(7 * 3 - 4 * 4) * 2 / 4 * 2}') # Resultado: 5.0
 
 # 2.
-def boletin1_2():
+def ejercicio2():
 
     print("\n--- Ejercicio 2 ---")
     print('Variables non válidos:')
@@ -24,7 +24,7 @@ def boletin1_2():
     print("Invalidos en (b): cantidade total")
 
 # 3.
-def boletin1_3():
+def ejercicio3():
 
     print("\n--- Ejercicio 3 ---")
     print('Expresar, utilizando operadores aritméticos:')
@@ -38,7 +38,7 @@ def boletin1_3():
     print('g) (n * (1 + i) ** t) / ((1 + i) ** t - 1)')
 
 # 4.
-def boletin1_4():
+def ejercicio4():
 
     print("\n--- Exercicio 4 ---")
     print('Avalia as seguintes expresións:')
@@ -92,7 +92,7 @@ def boletin1_4():
     print(f'i) 34 + 43 == “3443” -> {34 + 43 == "3443"}') # Resultado: False
 
 # 5.
-def boletin1_5():
+def ejercicio5():
     
     print("\n--- Ejercicio 5 ---")
     print('Avaliar espresións, tendo en conta as variables')
@@ -188,15 +188,15 @@ def menu_boletin1():
         choice = input("Seleccione un ejercicio: ")
 
         if choice == '1':
-            boletin1_1()
+            ejercicio1()
         elif choice == '2':
-            boletin1_2()
+            ejercicio2()
         elif choice == '3':
-            boletin1_3()
+            ejercicio3()
         elif choice == '4':
-            boletin1_4()
+            ejercicio4()
         elif choice == '5':
-            boletin1_5()
+            ejercicio5()
         elif choice == '0': # break option
             print("\nSaliendo del menú del Boletín 1.")
             break

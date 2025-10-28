@@ -3,7 +3,7 @@ import requests
 print('\nBoletín 2: Algorítmia')
 
 # 1. Algoritmo que calcula el área de un triángulo.
-def boletin2_1():
+def ejercicio1():
 
     print("\n--- Ejercicio 1 ---")
     print("Cálculo do área dun triángulo.")
@@ -14,7 +14,7 @@ def boletin2_1():
     print(f'El area del triángulo es:{area}')
 
 # 2. Algoritmo que calcula el área de un cuadrado.
-def boletin2_2():
+def ejercicio2():
 
     print("\n--- Ejercicio 2 ---")
     print("Cálculo del área de un cuadrado.")
@@ -24,7 +24,7 @@ def boletin2_2():
     print(f'El area del cuadrado es: {area}')
 
 # 3. Algoritmo que cambia euros a dólares.
-def boletin2_3():
+def ejercicio3():
 
     print("\n--- Ejercicio 3 ---")
     print("Cambio de euros a dólares.")
@@ -72,7 +72,7 @@ def boletin2_3():
     MOSTRAR 'No se puede dividir entre 0'
 14. FIN
 """
-def boletin2_4():
+def ejercicio4():
 
     num1 = float(input('Escribe el primer número: '))
     num2 = float(input('Escribe el segundo número: '))
@@ -86,7 +86,7 @@ def boletin2_4():
         print('cociente = Error: No se puede dividir entre 0')
 
 # 5. milla náutica a metro
-def boletin2_5():
+def ejercicio5():
     mllmar = float(input("Distancia en millas marinas: "))
     mtr = mllmar * 1852
     print(f"Distancia en metros: {mtr}")
@@ -105,15 +105,15 @@ def menu_boletin2():
         choice = input("Seleccione un ejercicio: ")
 
         if choice == '1':
-            boletin2_1()
+            ejercicio1()
         elif choice == '2':
-            boletin2_2()
+            ejercicio2()
         elif choice == '3':
-            boletin2_3()
+            ejercicio3()
         elif choice == '4':
-            boletin2_4()
+            ejercicio4()
         elif choice == '5':
-            boletin2_5()
+            ejercicio5()
         elif choice == '0':  # break option
             print("\nSaliendo del menú del Boletín 2.")
             break
