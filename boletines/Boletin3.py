@@ -73,3 +73,20 @@ def ejercicio4():
 # 5- Dados 3 números que se supoñen distintos, indicar cal é o
 # maior.
 def ejercicio5():
+
+    num1 = float(input("Escribe el primer número: "))
+    num2 = float(input("Escribe el segundo número: "))
+    num3 = float(input("Escribe el tercer número: "))
+
+    # if num1 > num2:
+    #     if num1 > num3:
+    #         print(f"{num1} es el número más grande.")
+    # elif num2 > num1:
+    #     if num2 > num3:
+    #         print(f"{num2} es el número más grande.")
+    # elif num3 > num1:
+    #     if num3 > num2:
+    #         print(f"{num3} es el número más grande.")
+
+    mayor = max(num1, num2, num3)
+    print(f"{mayor} es el número más grande.")
