@@ -2,15 +2,27 @@ from math import pi
 
 print('\nBoletín 4: Condicionales')
 
-# 1.
+# 1. Un almacén clasifica os seus produtos segundo a seguinte táboa de
+# vendas anuais:
 def ejercicio1():
-    print("Ejercicio 1")
-    Vendas anuais			Artigo de consumo
-    #baixo <= 100 produtos
-    #>100 e < = 500			medio
-    #> 500 e < = 1000			alto
-    #> 1000 				primeira necesidade
+    print("\n--- Ejercicio 1 ---")
+    print("Clasificador de productos.")
 
+    product_name = input("Nome do producto: ")
+    annual_sales = int(input("Ventas anuais: "))
+
+    product_type = ""
+
+    if annual_sales <= 100:
+        product_type = "baixo"
+    elif annual_sales <= 500:
+        product_type = "medio"
+    elif annual_sales <= 1000:
+        product_type = "alto"
+    else:
+        product_type = "primeira necesidade"
+
+    print(f"El artículo del producto '{product_name}' es de tipo: {product_type}")
 
 # 2. Area calculator
 def ejercicio2():
@@ -68,3 +80,25 @@ def ejercicio2():
 
         # else print error
         else: print("Error: Por favor elija un valor correcto.")
+
+# 3. Utiliza o operador ternario para calcular o valor absoluto dun número
+# que se solicita o usuario por teclado.
+def ejercicio3():
+
+    print("\n--- Ejercicio 3 ---")
+    print("Valor absoluto (Ternario).\n")
+
+    number = float(input("Introduce un número: "))
+
+    absolute_value = number if number >= 0 else -number
+
+    print(f"El valor absoluto de {number:g} es {absolute_value:g}")
+
+# 4. Escribe un programa que solicite o usuario un número comprendido
+# entre 1 e 99. O programa ten que mostralo con letras, por exemplo, para
+# o 56, mostrará: “Cincuenta e seis”.
+def ejercicio4():
+
+    print("\n--- Ejercicio 4 ---")
+    print("Números en letras.\n")
+
