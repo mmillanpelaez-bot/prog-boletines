@@ -8,7 +8,7 @@ diccionary
 """
 from boletines.Boletin1 import menu_boletin1
 from boletines.Boletin2 import menu_boletin2
-#from boletines.Boletin3 import menu_boletin3
+from boletines.Boletin3 import menu_boletin3
 #from boletines.Boletin4 import menu_boletin4
 #from boletines.Boletin5 import menu_boletin5
 #from boletines.Boletin6 import menu_boletin6
@@ -16,6 +16,9 @@ from boletines.Boletin2 import menu_boletin2
 #from boletines.Boletin8 import menu_boletin8
 
 def menu_boletines():
+    """
+    menu de los boletines de programacion
+    """
     print("\n--- Menú de Boletines ---")
     print("1. Boletín 1: Expresiones y booleanos")
     print("2. Boletín 2: Algorítmia")
@@ -33,8 +36,8 @@ def menu_boletines():
         menu_boletin1()
     elif choice == '2':
         menu_boletin2()
-    # elif choice == '3':
-    #     menu_boletin3()
+    elif choice == '3':
+        menu_boletin3()
     # elif choice == '4':
     #     menu_boletin4()
     # elif choice == '5':
@@ -49,5 +52,6 @@ def menu_boletines():
         print("Saliendo del programa.")
     else:
         print("Opción no válida. Inténtelo de nuevo.")
-        
-menu_boletines()
+
+if __name__ == "__main__":
+    menu_boletines()

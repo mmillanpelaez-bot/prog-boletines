@@ -1,17 +1,35 @@
 print('\nBoletín 5: Búcles')
 
 # 1. Escribir un ciclo definido para imprimir por pantalla tódolos números entre	10 e 20.
-print("Ejercicio 1.")
-for number in range(10,21):
-    print(number)
+def ejercicio1():
+    print("\n--- Ejercicio 1 ---")
+    print("Imprimir un rango de numeros.")
+
+    for number in range(10,21):
+        print(number)
 
 # 2. Escribir un programa que converta un valor dado en grados Fahrenheit a grados Celsius. Recordade que a fórmula para a conversión é: F = 9/5 * C + 32.
-print("Ejercicio 2.")
-def fahrenheit_to_celsius (f_degrees):
-    return (f_degrees - 32) * 5/9
-#    = float(input("Escribe el valor en Fahrenheit: "))
-#fahrenheit = (celsius*9/5)+32
-#print(fahrenheit)
+def ejercicio2():
+    print("\n--- Ejercicio 2 ---")
+    print("Conversor Fahrenheit > Celsius.")
+
+    def fahrenheit_to_celsius(f_degrees: float):
+        """
+        Convierte una temperatura de Fahrenheit a Celsius.
+        Recibe: f_degrees (float)
+        Devuelve: Temperatura en Celsius (float)
+        """
+        c_degrees = (f_degrees - 32) * 5 / 9
+        return c_degrees
+
+    while True:
+        try:
+            temperatura = float(input("Ingrese la temperatura Fº: "))
+            print(f"La temperatura es de {fahrenheit_to_celsius(temperatura):.2f} Cº")
+            break
+
+        except ValueError:
+            print("\nERROR: Introduzca una temperatura valida\n")
 
 # 3. Utiliza o programa anterior para xerar unha táboa de conversión de temperaturas, dende 0º F ata 120º F, de 10 en 10.
 print("Ejercicio 3.")

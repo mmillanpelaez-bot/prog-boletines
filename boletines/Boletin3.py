@@ -90,3 +90,35 @@ def ejercicio5():
 
     mayor = max(num1, num2, num3)
     print(f"{mayor} es el número más grande.")
+
+def menu_boletin3():
+    while True:
+
+        print("\n--- Menú de Ejercicios del Boletín 2 ---")
+        print("1. Confirmador de números naturales")
+        print("2. Booleano con opeacion aritmetica")
+        print("3. Signo matematico equivalente al numero")
+        print("4. Comparar peso de dos personas")
+        print("5. Comparar numero mayor")
+        print("0. Salir")
+
+        choice = input("Seleccione un ejercicio: ")
+
+        if choice == '1':
+            ejercicio1()
+        elif choice == '2':
+            ejercicio2()
+        elif choice == '3':
+            ejercicio3()
+        elif choice == '4':
+            ejercicio4()
+        elif choice == '5':
+            ejercicio5()
+        elif choice == '0':  # break option
+            print("\nSaliendo del menú del Boletín 3.")
+            break
+        else:  # else print error
+            print("Opción no válida. Inténtelo de nuevo.")
+
+if __name__ == "__main__":
+    menu_boletin3()

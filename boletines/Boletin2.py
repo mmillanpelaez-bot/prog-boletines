@@ -119,3 +119,6 @@ def menu_boletin2():
             break
         else:  # else print error
             print("Opción no válida. Inténtelo de nuevo.")
+
+if __name__ == "__main__":
+    menu_boletin2()

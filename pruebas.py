@@ -1,15 +1,20 @@
-def ejercicio5():
-    texto = "Python Python Python".lower().replace(" ", "")
-    vocales = []
-    consonantes = []
+print("\n--- Ejercicio 2 ---")
+print("Conversor Fahrenheit > Celsius.")
 
-    for letra in texto:
-        if letra.isalpha():
-            if letra in "aeiou":
-                vocales.append(letra)
-            else:
-                consonantes.append(letra)
+def fahrenheit_to_celsius(f_degrees: float):
+    """
+    Convierte una temperatura de Fahrenheit a Celsius.
+    Recibe: f_degrees (float)
+    Devuelve: Temperatura en Celsius (float)
+    """
+    c_degrees = (f_degrees - 32) * 5 / 9
+    return c_degrees
 
-    print(f"Vogais: {len(vocales)} → {vocales}")
-    print(f"Consoantes: {len(consonantes)} → {consonantes}")
-ejercicio5()
+while True:
+    try:
+        temperatura = float(input("Ingrese la temperatura Fº: "))
+        print(f"La temperatura es de {fahrenheit_to_celsius(temperatura):.2f} Cº")
+        break
+
+    except ValueError:
+        print("\nERROR: Introduzca una temperatura valida\n")
