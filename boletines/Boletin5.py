@@ -56,16 +56,16 @@ def ejercicio4():
 #   Nota: facelo usando e sen usar a ecuación n ∗ (n + 1) / 2. Cal realiza máis operacións?
 def ejercicio5():
     print("\n--- Ejercicio 5 ---")
-    print("Tabla conversion temperatura.")
+    print("Primer numero triangular")
 
 
 # 6. Escribir un programa que tome unha cantidade m de valores ingresados polo usuario, a cada un lle calcule o factorial e imprima o resultado xunto co número de orden correspondiente.
 def ejercicio6():
     print("\n--- Ejercicio 6 ---")
-    print("Calcular factorial.")
+    print("Calcular factorial")
 # 7. Escribir un programa que imprima por pantalla tódalas fichas de dominó, de unha por liña e sen repetir.
 def ejercicio7():
-    print("Ejercicio 7.")
+    print("Fichas domino.")
     def domino ():
         for n in range(7):
             for m in range(n, 7):
@@ -73,7 +73,7 @@ def ejercicio7():
     domino()
 # 8. Modificar o programa anterior para que poida xerar fichas dun xogo que pode ter números de 0 a n.
 def ejercicio8():
-    print("Ejercicio 8.")
+    print("Reutilizar fichas.")
     def generador_fichas(n):
         for i in range(n+1):
             for j in range(i, n+1):
@@ -86,19 +86,19 @@ def ejercicio8():
         print("Error: Por favor escribe un número entero.")
 # 9. Calcula a cantidade de números negativos, positivos e ceros que hai nun grupo de 10 números enteiros.
 def ejercicio9():
-    print("Ejercicio 9.")
+    print("Calcular numeros negativos")
 
 # 10. Deseña un programa que calcule o área dun rectángulo cuxa base e altura pides por teclado. Asegúrate que estes valores sexan positivos, para eso valida os datos.
 def ejercicio10():
-    print("Ejercicio 10.")
+    print("Calcular area rectangulo")
 
 # 11. Codifica un programa que solicite un número e visualice a táboa de multiplicar dese número. O programa seguirá pedindo números ata que o usuario pulse o número cero.
 def ejercicio11():
-    print("Ejercicio 11.")
+    print("Tabla de multiplicar de n")
 
 # 12. Codifica un programa que lea o soldo de cada un dos traballadores dunha empresa e obteña o número deles que ganan entre 1000 e 1750 €, ámbolos dous incluídos e, a porcentaxe de traballadores que ganan menos de 1000 €. Tendo en conta que non se coñece con antelación o numero de traballadores da empresa e non se admiten os soldos negativos (utiliza como condición de fin un soldo 0).
 def ejercicio12():
-    print("Ejercicio 12.")
+    print("Rango sueldo trabajadores")
 
 # 13. Solicita o usuario un número n e debuxa un triángulo de base e altura n. Si o usuario teclea o número 4 o triángulo sería da seguinte forma:
 #       *
@@ -106,7 +106,7 @@ def ejercicio12():
 #     * * *
 #    * * * *
 def ejercicio13():
-    print("Ejercicio 13.")
+    print("Dibujo triangulo base n")
 
 # 14. Codificar o programa que solicite 10 números por consola e calcule a súa suma. Si o usuario introduce en calquera momento o número 999, deixa de solicitar máis números e presenta o valor da súma acadada ata ese momento.
 
@@ -119,18 +119,18 @@ def salir():
 # NOTA: No uses paréntesis () en las funciones aquí, solo el nombre.
 OPCIONES_MENU = {
     "1":  ("Imprimir rango de números", ejercicio1),
-    "2":  ("Conversor Fahrenheit > Celsius.", ejercicio2),
-    "3":  ("Ejercicio 3", ejercicio3),
-    "4":  ("Ejercicio 4", ejercicio4),
-    "5":  ("Ejercicio 5", ejercicio5),
-    "6":  ("Ejercicio 6", ejercicio6),
-    "7":  ("Ejercicio 7", ejercicio7),
-    "8":  ("Ejercicio 8", ejercicio8),
-    "9":  ("Ejercicio 9", ejercicio9),
-    "10": ("Ejercicio 10", ejercicio10),
-    "11": ("Ejercicio 11", ejercicio11),
-    "12": ("Ejercicio 12", ejercicio12),
-    "13": ("Ejercicio 13", ejercicio13),
+    "2":  ("Conversor Fahrenheit > Celsius", ejercicio2),
+    "3":  ("Tabla conversion temperatura", ejercicio3),
+    "4":  ("Numeros pares", ejercicio4),
+    "5":  ("Primer numero triangular", ejercicio5),
+    "6":  ("Calcular factorial", ejercicio6),
+    "7":  ("Fichas domino.", ejercicio7),
+    "8":  ("Reutilizar fichas", ejercicio8),
+    "9":  ("Calcular numeros negativos", ejercicio9),
+    "10": ("Calcular area rectangulo", ejercicio10),
+    "11": ("Tabla de multiplicar de n", ejercicio11),
+    "12": ("Rango sueldo trabajadores", ejercicio12),
+    "13": ("Dibujo triangulo base n", ejercicio13),
     "0":  ("Salir", salir)
 }
 
