@@ -102,54 +102,50 @@ def ejercicio4():
     print("\n--- Ejercicio 4 ---")
     print("Números en letras.\n")
 
-# menú
+
+def salir():
+    print("\n👋 Saliendo del menú del Boletín 4...")
+    return False
+
+OPCIONES_MENU = {
+    "1":  ("Clasificador de productos", ejercicio1),
+    "2":  ("Calculador de áreas", ejercicio2),
+    "3":  ("Valor absoluto (Ternario)", ejercicio3),
+    "4":  ("Números en letras", ejercicio4),
+    "0":  ("Salir", salir)
+}
+
 def menu_boletin4():
-
-    while True:
-        
+    continuar = True
+    
+    while continuar:
         print("\n--- Menú de Ejercicios Boletín 4 ---")
-        print("1. ")
-        print("2. ")
-        print("3. ")
-        print("4. ")
-        print("5. ")
-        print("6. ")
-        print("7. ")
-        print("8. ")
-        print("9. ")
-        print("10. ")
-        print("11. ")
-        print("0. Salir")
+        
+        for clave, valor in OPCIONES_MENU.items():
+            descripcion = valor[0]
+            print(f"{clave}. {descripcion}")
 
-        choice = input("Seleccione un ejercicio: ")
+        choice = input("\n>> Seleccione un ejercicio: ")
 
-        if choice == '1':
-            ejercicio1()
-        elif choice == '2':
-            ejercicio2()
-        elif choice == '3':
-            ejercicio3()
-        elif choice == '4':
-            ejercicio4()
-        elif choice == '5':
-            ejercicio5()
-        elif choice == '6':
-            ejercicio6()
-        elif choice == '7':
-            ejercicio7()
-        elif choice == '8':
-            ejercicio8()
-        elif choice == '9':
-            ejercicio9()
-        elif choice == '10':
-            ejercicio10()
-        elif choice == '11':
-            ejercicio11()
-        elif choice == '0': # break option
-            print("\nSaliendo del menú del Boletín 5.")
-            break
-        else:  # else print error
-            print("Opción no válida. Inténtelo de nuevo.")
+
+        if choice in OPCIONES_MENU:
+            accion = OPCIONES_MENU[choice][1]
+            
+            try:
+                resultado = accion() 
+                
+                if resultado is False:
+                    continuar = False
+                else:
+                    input("\n[Intro para continuar...]")
+                    
+            except NameError:
+                print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
+            except Exception as e:
+                print(f"⚠️  Ocurrió un error inesperado en el ejercicio: {e}")
+                
+        else:
+            print("❌ Opción no válida. Inténtelo de nuevo.")
 
 if __name__ == "__main__":
-    menu_boletin7()
+    menu_boletin4()

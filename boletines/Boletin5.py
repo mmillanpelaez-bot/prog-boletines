@@ -108,15 +108,11 @@ def ejercicio12():
 def ejercicio13():
     print("Dibujo triangulo base n")
 
-# 14. Codificar o programa que solicite 10 números por consola e calcule a súa suma. Si o usuario introduce en calquera momento o número 999, deixa de solicitar máis números e presenta o valor da súma acadada ata ese momento.
 
 def salir():
     print("\n👋 Saliendo del menú del Boletín 5...")
-    return False # Retornamos False para indicar que queremos parar el bucle
+    return False
 
-# --- 2. Configuración del Menú ---
-# Estructura: "Clave": ("Descripción para el usuario", referencia_a_la_funcion)
-# NOTA: No uses paréntesis () en las funciones aquí, solo el nombre.
 OPCIONES_MENU = {
     "1":  ("Imprimir rango de números", ejercicio1),
     "2":  ("Conversor Fahrenheit > Celsius", ejercicio2),
@@ -140,28 +136,22 @@ def menu_boletin5():
     while continuar:
         print("\n--- Menú de Ejercicios Boletín 5 ---")
         
-        # Bucle de visualización: Generamos la lista dinámicamente
-        # Esto es lo que lo hace escalable. Si añades el 14 arriba, sale solo aquí.
         for clave, valor in OPCIONES_MENU.items():
             descripcion = valor[0]
             print(f"{clave}. {descripcion}")
 
         choice = input("\n>> Seleccione un ejercicio: ")
 
-        # Lógica de despacho (Dispatcher)
         if choice in OPCIONES_MENU:
-            accion = OPCIONES_MENU[choice][1] # Obtenemos la función
+            accion = OPCIONES_MENU[choice][1]
             
             try:
-                # Ejecutamos la función. 
-                # Capturamos el retorno por si es la función salir()
                 resultado = accion() 
                 
-                # Si la función devuelve explícitamente False (como salir), rompemos
                 if resultado is False:
                     continuar = False
                 else:
-                    input("\n[Intro para continuar...]") # Pausa táctica para leer el resultado
+                    input("\n[Intro para continuar...]")
                     
             except NameError:
                 print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
@@ -172,6 +162,4 @@ def menu_boletin5():
             print("❌ Opción no válida. Inténtelo de nuevo.")
 
 if __name__ == "__main__":
-    # Necesitas tener definidas las funciones ejercicio1...ejercicio13 
-    # para que esto no falle al elegir una opción.
     menu_boletin5()

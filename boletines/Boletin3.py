@@ -91,34 +91,51 @@ def ejercicio5():
     mayor = max(num1, num2, num3)
     print(f"{mayor} es el número más grande.")
 
+
+def salir():
+    print("\n👋 Saliendo del menú del Boletín 3...")
+    return False
+
+OPCIONES_MENU = {
+    "1":  ("Confirmador de números naturales", ejercicio1),
+    "2":  ("Booleano con operación aritmética", ejercicio2),
+    "3":  ("Signo matemático equivalente al número", ejercicio3),
+    "4":  ("Comparar peso de dos personas", ejercicio4),
+    "5":  ("Comparar número mayor", ejercicio5),
+    "0":  ("Salir", salir)
+}
+
 def menu_boletin3():
-    while True:
+    continuar = True
+    
+    while continuar:
+        print("\n--- Menú de Ejercicios Boletín 3 ---")
+        
+        for clave, valor in OPCIONES_MENU.items():
+            descripcion = valor[0]
+            print(f"{clave}. {descripcion}")
 
-        print("\n--- Menú de Ejercicios del Boletín 2 ---")
-        print("1. Confirmador de números naturales")
-        print("2. Booleano con opeacion aritmetica")
-        print("3. Signo matematico equivalente al numero")
-        print("4. Comparar peso de dos personas")
-        print("5. Comparar numero mayor")
-        print("0. Salir")
+        choice = input("\n>> Seleccione un ejercicio: ")
 
-        choice = input("Seleccione un ejercicio: ")
 
-        if choice == '1':
-            ejercicio1()
-        elif choice == '2':
-            ejercicio2()
-        elif choice == '3':
-            ejercicio3()
-        elif choice == '4':
-            ejercicio4()
-        elif choice == '5':
-            ejercicio5()
-        elif choice == '0':  # break option
-            print("\nSaliendo del menú del Boletín 3.")
-            break
-        else:  # else print error
-            print("Opción no válida. Inténtelo de nuevo.")
+        if choice in OPCIONES_MENU:
+            accion = OPCIONES_MENU[choice][1]
+            
+            try:
+                resultado = accion() 
+                
+                if resultado is False:
+                    continuar = False
+                else:
+                    input("\n[Intro para continuar...]")
+                    
+            except NameError:
+                print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
+            except Exception as e:
+                print(f"⚠️  Ocurrió un error inesperado en el ejercicio: {e}")
+                
+        else:
+            print("❌ Opción no válida. Inténtelo de nuevo.")
 
 if __name__ == "__main__":
     menu_boletin3()
