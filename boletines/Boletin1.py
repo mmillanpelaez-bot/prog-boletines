@@ -172,36 +172,61 @@ def ejercicio5():
     a=2; b=5; c=6; d=10
     print(f"i) {not(a * b < d) and not(a * b < c) or b + c <= d}") # Resultado: True
 
-# menú
+
+def salir():
+    print("\n👋 Saliendo del menú del Boletín 1...")
+    return False # Retornamos False para indicar que queremos parar el bucle
+
+# --- 2. Configuración del Menú ---
+# Estructura: "Clave": ("Descripción para el usuario", referencia_a_la_funcion)
+# NOTA: No uses paréntesis () en las funciones aquí, solo el nombre.
+OPCIONES_MENU = {
+    "1":  ("Resultado de las expresiones", ejercicio1),
+    "2":  ("Variables no válidos", ejercicio2),
+    "3":  ("Expresar con operadores aritméticos", ejercicio3),
+    "4":  ("Evaluar expresiones lógicas", ejercicio4),
+    "5":  ("Evaluar expresiones con variables", ejercicio5),
+    "0":  ("Salir", salir)
+}
+
 def menu_boletin1():
-
-    while True:
-        
+    continuar = True
+    
+    while continuar:
         print("\n--- Menú de Ejercicios Boletín 1 ---")
-        print("1. Resultado de las expresiones")
-        print("2. Variables no válidos")
-        print("3. Expresar con operadores aritméticos")
-        print("4. Evaluar expresiones lógicas")
-        print("5. Evaluar expresiones con variables")
-        print("0. Salir")
+        
+        # Bucle de visualización: Generamos la lista dinámicamente
+        # Esto es lo que lo hace escalable. Si añades el 14 arriba, sale solo aquí.
+        for clave, valor in OPCIONES_MENU.items():
+            descripcion = valor[0]
+            print(f"{clave}. {descripcion}")
 
-        choice = input("Seleccione un ejercicio: ")
+        choice = input("\n>> Seleccione un ejercicio: ")
 
-        if choice == '1':
-            ejercicio1()
-        elif choice == '2':
-            ejercicio2()
-        elif choice == '3':
-            ejercicio3()
-        elif choice == '4':
-            ejercicio4()
-        elif choice == '5':
-            ejercicio5()
-        elif choice == '0': # break option
-            print("\nSaliendo del menú del Boletín 1.")
-            break
-        else:  # else print error
-            print("Opción no válida. Inténtelo de nuevo.")
+        # Lógica de despacho (Dispatcher)
+        if choice in OPCIONES_MENU:
+            accion = OPCIONES_MENU[choice][1] # Obtenemos la función
+            
+            try:
+                # Ejecutamos la función. 
+                # Capturamos el retorno por si es la función salir()
+                resultado = accion() 
+                
+                # Si la función devuelve explícitamente False (como salir), rompemos
+                if resultado is False:
+                    continuar = False
+                else:
+                    input("\n[Intro para continuar...]") # Pausa táctica para leer el resultado
+                    
+            except NameError:
+                print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
+            except Exception as e:
+                print(f"⚠️  Ocurrió un error inesperado en el ejercicio: {e}")
+                
+        else:
+            print("❌ Opción no válida. Inténtelo de nuevo.")
 
-if __name__ == "__main__": #for testing purposes
+if __name__ == "__main__":
+    # Necesitas tener definidas las funciones ejercicio1...ejercicio13 
+    # para que esto no falle al elegir una opción.
     menu_boletin1()

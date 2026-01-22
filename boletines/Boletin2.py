@@ -91,34 +91,51 @@ def ejercicio5():
     mtr = mllmar * 1852
     print(f"Distancia en metros: {mtr}")
 
+
+def salir():
+    print("\n👋 Saliendo del menú del Boletín 2...")
+    return False
+
+OPCIONES_MENU = {
+    "1":  ("Calculador del área de un triángulo", ejercicio1),
+    "2":  ("Cálculo del área de un cuadrado", ejercicio2),
+    "3":  ("Cambio de euros a dólares", ejercicio3),
+    "4":  ("Secuencia algebráica", ejercicio4),
+    "5":  ("Milla náutica a metro", ejercicio5),
+    "0":  ("Salir", salir)
+}
+
 def menu_boletin2():
-    while True:
+    continuar = True
+    
+    while continuar:
+        print("\n--- Menú de Ejercicios Boletín 2 ---")
+        
+        for clave, valor in OPCIONES_MENU.items():
+            descripcion = valor[0]
+            print(f"{clave}. {descripcion}")
 
-        print("\n--- Menú de Ejercicios del Boletín 2 ---")
-        print("1. Calculador del área de un triángulo")
-        print("2. Cálculo del área de un cuadrado")
-        print("3. Cambio de euros a dólares")
-        print("4. Secuencia algebráica")
-        print("5. Milla náutica a metro")
-        print("0. Salir")
+        choice = input("\n>> Seleccione un ejercicio: ")
 
-        choice = input("Seleccione un ejercicio: ")
 
-        if choice == '1':
-            ejercicio1()
-        elif choice == '2':
-            ejercicio2()
-        elif choice == '3':
-            ejercicio3()
-        elif choice == '4':
-            ejercicio4()
-        elif choice == '5':
-            ejercicio5()
-        elif choice == '0':  # break option
-            print("\nSaliendo del menú del Boletín 2.")
-            break
-        else:  # else print error
-            print("Opción no válida. Inténtelo de nuevo.")
+        if choice in OPCIONES_MENU:
+            accion = OPCIONES_MENU[choice][1]
+            
+            try:
+                resultado = accion() 
+                
+                if resultado is False:
+                    continuar = False
+                else:
+                    input("\n[Intro para continuar...]")
+                    
+            except NameError:
+                print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
+            except Exception as e:
+                print(f"⚠️  Ocurrió un error inesperado en el ejercicio: {e}")
+                
+        else:
+            print("❌ Opción no válida. Inténtelo de nuevo.")
 
 if __name__ == "__main__":
     menu_boletin2()
