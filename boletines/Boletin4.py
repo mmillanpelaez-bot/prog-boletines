@@ -1,7 +1,5 @@
 from math import pi
 
-print('\nBoletín 4: Condicionales')
-
 # 1. Un almacén clasifica os seus produtos segundo a seguinte táboa de
 # vendas anuais:
 def ejercicio1():
@@ -132,7 +130,7 @@ def menu_boletin4():
             accion = OPCIONES_MENU[choice][1]
             
             try:
-                resultado = accion() 
+                resultado = accion()
                 
                 if resultado is False:
                     continuar = False

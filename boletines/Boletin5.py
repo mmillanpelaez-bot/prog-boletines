@@ -1,5 +1,3 @@
-print('\nBoletín 5: Búcles')
-
 # 1. Escribir un ciclo definido para imprimir por pantalla tódolos números entre	10 e 20.
 def ejercicio1():
     print("\n--- Ejercicio 1 ---")

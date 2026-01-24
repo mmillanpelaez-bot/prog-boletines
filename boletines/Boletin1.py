@@ -1,5 +1,3 @@
-print('\nBoletín 1.')
-
 # 1.
 def ejercicio1():
 

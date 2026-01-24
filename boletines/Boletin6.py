@@ -1,9 +1,3 @@
-print('\nBoletín 6.')
-
-
-
-
-
 
 def salir():
     print("\n👋 Saliendo del menú del Boletín 6...")

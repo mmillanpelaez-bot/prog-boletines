@@ -1,7 +1,5 @@
 import requests
 
-print('\nBoletín 2: Algorítmia')
-
 # 1. Algoritmo que calcula el área de un triángulo.
 def ejercicio1():
 

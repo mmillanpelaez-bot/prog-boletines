@@ -1,5 +1,3 @@
-print('\nBoletín 3: Condicionales')
-
 # 1. Confirmador de números naturales
 def ejercicio1():
     while True:

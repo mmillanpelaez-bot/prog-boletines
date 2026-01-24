@@ -1,5 +1,3 @@
-print('\nBoletín 7. Cadeas de caracteres')
-#
 # 1. Mostra a lonxitude do texto: “ Isto é Python!”
 def ejercicio1():
     print(len("Isto é Python!"))

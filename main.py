@@ -11,9 +11,9 @@ from boletines.Boletin2 import menu_boletin2
 from boletines.Boletin3 import menu_boletin3
 from boletines.Boletin4 import menu_boletin4
 from boletines.Boletin5 import menu_boletin5
-from boletines.Boletin6 import menu_boletin6
-from boletines.Boletin7 import menu_boletin7
-from boletines.Boletin8 import menu_boletin8
+# from boletines.Boletin6 import menu_boletin6
+# from boletines.Boletin7 import menu_boletin7
+# from boletines.Boletin8 import menu_boletin8
 
 
 def salir():
@@ -26,9 +26,9 @@ OPCIONES_MENU = {
     "3":  ("Boletín 3: Condicionales", menu_boletin3),
     "4":  ("Boletín 4: Condicionales", menu_boletin4),
     "5":  ("Boletín 5: Bucles", menu_boletin5),
-    "6":  ("Boletín 6: Listas y Tuplas", menu_boletin6),
-    "7":  ("Boletín 7: Cadenas de caracteres", menu_boletin7),
-    "8":  ("Boletín 8: Tuplas, listas y diccionarios", menu_boletin8),
+    # "6":  ("Boletín 6: Listas y Tuplas", menu_boletin6),
+    # "7":  ("Boletín 7: Cadenas de caracteres", menu_boletin7),
+    # "8":  ("Boletín 8: Tuplas, listas y diccionarios", menu_boletin8),
     "0":  ("Salir", salir)
 }
 
