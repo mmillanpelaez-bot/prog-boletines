@@ -23,13 +23,12 @@ def menu_boletin8():
 
         choice = input("\n>> Seleccione un ejercicio: ")
 
-
         if choice in OPCIONES_MENU:
             accion = OPCIONES_MENU[choice][1]
             
             try:
-                resultado = accion() 
-                
+                resultado = accion()
+
                 if resultado is False:
                     continuar = False
                 else:

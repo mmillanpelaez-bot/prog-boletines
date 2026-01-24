@@ -100,6 +100,36 @@ def ejercicio4():
     print("\n--- Ejercicio 4 ---")
     print("Números en letras.\n")
 
+    numbers_in_letter = {
+        '0': 'cero',
+        '1': 'uno',
+        '2': 'dos',
+        '3': 'tres',
+        '4': 'cuatro',
+        '5': 'cinco',
+        '6': 'seis',
+        '7': 'siete',
+        '8': 'ocho',
+        '9': 'nueve',
+        '10': 'diez',
+        '11': 'once',
+        '12': 'doce',
+        '13': 'trece',
+        '14': 'catorce',
+        '15': 'quince',
+        '20': 'veinte',
+        '30': 'treinta',
+        '40': 'cuarenta',
+        '50': 'cincuenta',
+        '60': 'sesenta',
+        '70': 'setenta',
+        '80': 'ochenta',
+        '90': 'noventa'
+    }
+
+    entrada = input('Escriba el número que quiera mostrar en letras: ')
+
+    print(f"{entrada}. {numbers_in_letter[entrada]}")
 
 def salir():
     print("\n👋 Saliendo del menú del Boletín 4...")
@@ -124,7 +154,6 @@ def menu_boletin4():
             print(f"{clave}. {descripcion}")
 
         choice = input("\n>> Seleccione un ejercicio: ")
-
 
         if choice in OPCIONES_MENU:
             accion = OPCIONES_MENU[choice][1]

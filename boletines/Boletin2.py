@@ -115,7 +115,6 @@ def menu_boletin2():
 
         choice = input("\n>> Seleccione un ejercicio: ")
 
-
         if choice in OPCIONES_MENU:
             accion = OPCIONES_MENU[choice][1]
             
