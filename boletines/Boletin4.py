@@ -100,36 +100,71 @@ def ejercicio4():
     print("\n--- Ejercicio 4 ---")
     print("Números en letras.\n")
 
-    numbers_in_letter = {
-        '0': 'cero',
-        '1': 'uno',
-        '2': 'dos',
-        '3': 'tres',
-        '4': 'cuatro',
-        '5': 'cinco',
-        '6': 'seis',
-        '7': 'siete',
-        '8': 'ocho',
-        '9': 'nueve',
-        '10': 'diez',
-        '11': 'once',
-        '12': 'doce',
-        '13': 'trece',
-        '14': 'catorce',
-        '15': 'quince',
-        '20': 'veinte',
-        '30': 'treinta',
-        '40': 'cuarenta',
-        '50': 'cincuenta',
-        '60': 'sesenta',
-        '70': 'setenta',
-        '80': 'ochenta',
-        '90': 'noventa'
+    unidad = {
+        0: 'cero',
+        1: 'uno',
+        2: 'dos',
+        3: 'tres',
+        4: 'cuatro',
+        5: 'cinco',
+        6: 'seis',
+        7: 'siete',
+        8: 'ocho',
+        9: 'nueve',
+    }
+    decena = {
+        1: 'diez',
+        2: 'veinte',
+        3: 'treinta',
+        4: 'cuarenta',
+        5: 'cincuenta',
+        6: 'sesenta',
+        7: 'setenta',
+        8: 'ochenta',
+        9: 'noventa'
+    }
+    especiales = {
+        11: 'once',
+        12: 'doce',
+        13: 'trece',
+        14: 'catorce',
+        15: 'quince',
+        16: 'dieciséis',
+        17: 'diecisiete',
+        18: 'dieciocho',
+        19: 'diecinueve',
+        21: 'veintiuno',
+        22: 'veintidós',
+        23: 'veintitrés',
+        24: 'veinticuatro',
+        25: 'veinticinco',
+        26: 'veintiséis',
+        27: 'veintisiete',
+        28: 'veintiocho',
+        29: 'veintinueve'
     }
 
-    entrada = input('Escriba el número que quiera mostrar en letras: ')
+    while True:
+        entrada = input('Escriba el número (o pulse Enter para salir): ')
 
-    print(f"{entrada}. {numbers_in_letter[entrada]}")
+        if  entrada == '':
+            print('!Hasta luego!')
+            break
+
+        numero = int(entrada)
+
+        extraer_decena = numero // 10
+        extraer_unidad = numero % 10
+
+        if numero in especiales:
+            print(f'{especiales[numero]}')
+        elif numero in range(0,10):
+            print(unidad[extraer_unidad])
+        elif extraer_unidad == 0:
+            print(decena[extraer_decena])
+        else:
+            print(f'{decena[extraer_decena]} y {unidad[extraer_unidad]}')
+
 
 def salir():
     print("\n👋 Saliendo del menú del Boletín 4...")
