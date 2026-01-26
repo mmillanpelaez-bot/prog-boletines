@@ -1,5 +1,8 @@
 from math import pi
 
+from pygments.lexers.textfmts import TodotxtLexer
+
+
 # 1. Un almacén clasifica os seus produtos segundo a seguinte táboa de
 # vendas anuais:
 def ejercicio1():
@@ -96,7 +99,7 @@ def ejercicio3():
 # entre 1 e 99. O programa ten que mostralo con letras, por exemplo, para
 # o 56, mostrará: “Cincuenta e seis”.
 def ejercicio4():
-
+# TODO: añadir excepciones de 'no numeros' y de rango.
     print("\n--- Ejercicio 4 ---")
     print("Números en letras.\n")
 
