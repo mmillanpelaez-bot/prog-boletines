@@ -70,7 +70,7 @@ def ejercicio9():
 # un programa que escriba o cálculo da cadea: «Ola, son alumno de
 # DAM1, e son programador desde o 2025».
 def ejercicio10():
-
+    print()
 # 11.Escribir funcións que dada unha cadena de caracteres:
 # a) Imprima os dous primeiros caracteres.
 # b) Imprima os tres últimos caracteres.
@@ -78,7 +78,7 @@ def ejercicio10():
 # rca
 # d) Imprima a cadea nun sentido e en sentido inverso. Ex: reflexo imprime
 # reflexooxelfer.
-def boletin7_11():
+def ejercicio11():
     """
     START
     READ string
@@ -194,6 +194,9 @@ def ejercicio23():
 
 
 def salir():
+    """
+    Salir del menú de una forma más visual.
+    """
     print("\n👋 Saliendo del menú del Boletín 7...")
     return False
 
@@ -207,6 +210,14 @@ OPCIONES_MENU = {
 }
 
 def menu_boletin7():
+    """
+    Despliega el menú principal del boletín y gestiona la navegación.
+
+    Utiliza un patrón Dispatcher con diccionario para seleccionar
+    la función correspondiente a cada ejercicio.
+
+    :return: None
+    """
     continuar = True
     
     while continuar:

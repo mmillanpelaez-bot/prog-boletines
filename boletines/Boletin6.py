@@ -22,6 +22,7 @@ def ejercicio1():
     for i in range(len(asignaturas)):
         print(f"\nEn {asignaturas[i]} sacaches {notas[i]}")
 
+
 # 2. Escribir un programa que pregunte o usuario os números
 # gañadores da lotería primitiva, os almacene nunha lista e
 # os muestre por pantalla ordenados de menor a maior.
@@ -29,12 +30,14 @@ def ejercicio2():
     print("\n--- Ejercicio 2 ---")
     print("\nAlmacenar y mostrar lista de menor a mayor")
 
+
 # 3. Escribir un programa que almacene nunha lista os
 # números do 1 o 10 e os mostre por pantalla en orden
 # inverso separados por comas.
 def ejercicio3():
     print("\n--- Ejercicio 3 ---")
     print("\nAlmacenar y mostrar lista inversa en un rango")
+
 
 # 4. Escribir un programa que almacene as asignaturas dun
 # curso (por exemplo Matemáticas, Física, Química, Historia
@@ -45,7 +48,18 @@ def ejercicio3():
 def ejercicio4():
     print("\n--- Ejercicio 4 ---")
     print("\nAlmacenar, mostrar y eliminar de una lista ")
-    ejercicio1()
+
+    asignaturas = ['Matemáticas', 'Física', 'Química', 'Historia', 'Língua']
+    notas = []
+
+    for asignatura in asignaturas:
+        nota = input(f"\nIntroduce a nota que sacaches en {asignatura}: ")
+        notas.append(nota)
+
+    for i in range(len(asignaturas)):
+        print(f"\nEn {asignaturas[i]} sacaches {notas[i]}, tes que recuperala.")
+
+
 # 5. Escribir un programa que almacene o abecedario nunha
 # lista, e cree outra lista a partir dela, onde non aparezan as
 # letras que ocupen posicións múltiplos de 3, e mostre por
@@ -85,34 +99,46 @@ def ejercicio4():
 # por pantalla a súa media e desviación típica.
 
 
-
 def salir():
+    """
+    Salir del menú de una forma más visual.
+    """
     print("\n👋 Saliendo del menú del Boletín 6...")
     return False
 
+
 OPCIONES_MENU = {
-    "1":  ("Almacenar y mostrar lista", ejercicio1),
-     "2":  ("Almacenar y mostrar lista de menor a mayor", ejercicio2),
-     "3":  ("Almacenar y mostrar lista inversa en un rango", ejercicio3),
-     "4":  ("Almacenar, mostrar y eliminar de la lista", ejercicio4),
-    # "5":  ("Primer numero triangular", ejercicio5),
-    # "6":  ("Calcular factorial", ejercicio6),
-    # "7":  ("Fichas domino.", ejercicio7),
-    # "8":  ("Reutilizar fichas", ejercicio8),
-    # "9":  ("Calcular numeros negativos", ejercicio9),
+    "1" : ("Almacenar y mostrar lista", ejercicio1),
+    "2" : ("Almacenar y mostrar lista de menor a mayor", ejercicio2),
+    "3" : ("Almacenar y mostrar lista inversa en un rango", ejercicio3),
+    "4" : ("Almacenar, mostrar y eliminar de la lista", ejercicio4),
+    # "5" : ("Primer numero triangular", ejercicio5),
+    # "6" : ("Calcular factorial", ejercicio6),
+    # "7" : ("Fichas domino.", ejercicio7),
+    # "8" : ("Reutilizar fichas", ejercicio8),
+    # "9" : ("Calcular numeros negativos", ejercicio9),
     # "10": ("Calcular area rectangulo", ejercicio10),
     # "11": ("Tabla de multiplicar de n", ejercicio11),
     # "12": ("Rango sueldo trabajadores", ejercicio12),
     # "13": ("Dibujo triangulo base n", ejercicio13),
-    "0":  ("Salir", salir)
+    # "0" : ("Salir", salir)
 }
 
+
 def menu_boletin6():
+    """
+    Despliega el menú principal del boletín y gestiona la navegación.
+
+    Utiliza un patrón Dispatcher con diccionario para seleccionar
+    la función correspondiente a cada ejercicio.
+
+    :return: None
+    """
     continuar = True
-    
+
     while continuar:
         print("\n--- Menú de Ejercicios Boletín 6 ---")
-        
+
         for clave, valor in OPCIONES_MENU.items():
             descripcion = valor[0]
             print(f"{clave}. {descripcion}")
@@ -121,22 +147,23 @@ def menu_boletin6():
 
         if choice in OPCIONES_MENU:
             accion = OPCIONES_MENU[choice][1]
-            
+
             try:
-                resultado = accion() 
-                
+                resultado = accion()
+
                 if resultado is False:
                     continuar = False
                 else:
                     input("\n[Intro para continuar...]")
-                    
+
             except NameError:
                 print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
             except Exception as e:
                 print(f"⚠️  Ocurrió un error inesperado en el ejercicio: {e}")
-                
+
         else:
             print("❌ Opción no válida. Inténtelo de nuevo.")
+
 
 if __name__ == "__main__":
     menu_boletin6()

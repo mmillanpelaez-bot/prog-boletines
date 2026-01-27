@@ -1,11 +1,4 @@
-"""
-needs some polish:
-----imports at the top---
-less if statements
-automate
-make scalable
-diccionary
-"""
+import os
 from boletines.Boletin1 import menu_boletin1
 from boletines.Boletin2 import menu_boletin2
 from boletines.Boletin3 import menu_boletin3
@@ -14,6 +7,15 @@ from boletines.Boletin5 import menu_boletin5
 # from boletines.Boletin6 import menu_boletin6
 # from boletines.Boletin7 import menu_boletin7
 # from boletines.Boletin8 import menu_boletin8
+
+
+
+def limpiar_pantalla():
+    """Detecta el sistema operativo y limpia la terminal."""
+    if os.name == 'nt':      # Si es Windows
+        os.system('cls')
+    else:                    # Si es Linux/Mac
+        os.system('clear')
 
 
 def salir():
@@ -33,6 +35,14 @@ OPCIONES_MENU = {
 }
 
 def menu_boletines():
+    """
+        Despliega el menú principal de los boletines y gestiona la navegación.
+
+        Utiliza un patrón Dispatcher con diccionario para seleccionar
+        la función correspondiente a cada ejercicio.
+
+        :return: None
+        """
     continuar = True
     
     while continuar:
