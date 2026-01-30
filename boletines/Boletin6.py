@@ -25,10 +25,37 @@ def ejercicio1():
 
 # 2. Escribir un programa que pregunte o usuario os números
 # gañadores da lotería primitiva, os almacene nunha lista e
-# os muestre por pantalla ordenados de menor a maior.
+# os muestre por pantalla, ordenados de menor a maior.
 def ejercicio2():
     print("\n--- Ejercicio 2 ---")
     print("\nAlmacenar y mostrar lista de menor a mayor")
+
+    NUMBER_QUANTITY = 6
+    MIN_RANGE = 1
+    MAX_RANGE = 49
+
+    winner_numbers = []
+
+    while len(winner_numbers) < NUMBER_QUANTITY:
+        try:
+            user_input = input('\nIntroduzca los números ganadores de la primitiva: ')
+            number = int(user_input)
+
+            if not (MIN_RANGE <= number <= MAX_RANGE):
+                print(f'ERROR: El número debe estar entre {MIN_RANGE} y {MAX_RANGE}.')
+                continue
+
+            if number in winner_numbers:
+                print(f'ERROR: El número {number} ya se haya en la lista.')
+                continue
+
+            winner_numbers.append(number)
+
+        except ValueError:
+            print('ERROR: Entrada no válida.')
+
+    winner_numbers.sort()
+    print(winner_numbers)
 
 
 # 3. Escribir un programa que almacene nunha lista os
@@ -36,7 +63,12 @@ def ejercicio2():
 # inverso separados por comas.
 def ejercicio3():
     print("\n--- Ejercicio 3 ---")
-    print("\nAlmacenar y mostrar lista inversa en un rango")
+    print("\nMostrar lista invertida de rango de números")
+
+    numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+    reverse_numbers = numbers[::-1]
+
+    print(f'{', '.join(reverse_numbers)}')
 
 
 # 4. Escribir un programa que almacene as asignaturas dun
@@ -47,43 +79,111 @@ def ejercicio3():
 # as asignaturas que o usuario ten que repetir.
 def ejercicio4():
     print("\n--- Ejercicio 4 ---")
-    print("\nAlmacenar, mostrar y eliminar de una lista ")
+    print("\nMostrar asignaturas pendientes ")
 
     asignaturas = ['Matemáticas', 'Física', 'Química', 'Historia', 'Língua']
     notas = []
 
     for asignatura in asignaturas:
-        nota = input(f"\nIntroduce a nota que sacaches en {asignatura}: ")
+        nota = float(input(f"\nIntroduce a nota que sacaches en {asignatura}: "))
         notas.append(nota)
 
-    for i in range(len(asignaturas)):
-        print(f"\nEn {asignaturas[i]} sacaches {notas[i]}, tes que recuperala.")
+    for i in range(len(asignaturas) -1, -1, -1):
+        if notas[i] >= 5:
+            asignaturas.pop(i)
+            notas.pop(i)
+
+    print("\n--- Resultado Final ---")
+    if len(asignaturas) == 0:
+        print("¡Felicidades! Lo has aprobado todo.")
+    else:
+        print("Tienes que repetir las siguientes asignaturas: ")
+        for asignatura in asignaturas:
+            print(f"- {asignatura}")
 
 
 # 5. Escribir un programa que almacene o abecedario nunha
 # lista, e cree outra lista a partir dela, onde non aparezan as
 # letras que ocupen posicións múltiplos de 3, e mostre por
 # pantalla a lista resultante.
+def ejercicio5():
+    print("\n--- Ejercicio 5 ---")
+    print("\nMostrar lista filtrada a partir del abecedario ")
 
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    # filtered_alphabet = [char for i, char in enumerate(alphabet) if i % 3 != 0]# -> forma pythonica
+    filtered_alphabet = []
+    for i in range(len(alphabet)):
+        if i % 3 != 0:
+            filtered_alphabet.append(alphabet[i])
+
+    print(filtered_alphabet)
 
 # 6. Escribir un programa que pida o usuario unha palabra e
 # mostre por pantalla si é un palíndromo.
+def ejercicio6():
+    print("\n--- Ejercicio 6 ---")
+    print("\nVerificar palíndromo ")
+
+    while True:
+        word = input('\nWrite a word (or press Enter to exit): ').upper()
+        word_inverse = word[::-1]
+
+        if  word == '':
+            print('!Hasta luego!')
+            break
+
+        if not word.isalpha():
+            print('ERROR: Introduce a valid word.')
+        elif word == word_inverse:
+            print(f'The word "{word}" is a palindrome')
+        else:
+            print(f'The word "{word}" is not a palindrome')
 
 
 # 7. Escribir un programa que pida o usuario unha palabra e
 # mostre por pantalla o número de veces que conten cada
 # vogal.
+def ejercicio7():
+    print("\n--- Ejercicio 7 ---")
+    print("\n Vocales repetidas")
 
+    vowels = ('A', 'E', 'I', 'O', 'U')
+    word = input('Write a word: ').upper()
+
+    for vowel in vowels:
+        count = word.count(vowel)
+        print(f'The vowel {vowel} appears {count} times.')
 
 # 8. Escribir un programa que almacene nunha lista os
 # seguintes prezos, 50, 75, 46, 22, 80, 65, 8, e mostre por
 # pantalla o menor e o maior dos prezos.
+def ejercicio8():
+    print("\n--- Ejercicio 8 ---")
+    print("\n ")
 
 
 # 9. Escribir un programa que almacene os vectores (1,2,3) e
-# (-1,0,2) en duas listas e mostre por pantalla o seu
+# (-1,0,2) en dúas listas e mostre por pantalla o seu
 # producto escalar.
+def ejercicio9():
+    print("\n--- Ejercicio 9 ---")
+    print("\n Producto escalar")
 
+    vector1 = [1, 2, 3]
+    vector2 = [-1, 0, 2]
+
+    scalar_product = 0
+
+    # for i in range(len(vector1)):
+    #     scalar_product += vector1[i] * vector2[i]
+
+    # for v1, v2 in zip(vector1, vector2): # forma pythonica
+    #     scalar_product += v1 * v2
+
+    scalar_product = sum(v1 * v2 for v1, v2 in zip(vector1, vector2)) # forma más pythonica (con List Comprehension)
+
+    print(f'El producto escalar es: {scalar_product}')
 
 # 10. Escribir un programa que almacene as matrices
 # a = (1,2,3) b = (-1,0)
@@ -92,11 +192,17 @@ def ejercicio4():
 # nunha lista e mostre por pantalla o seu produto.
 # Nota: Para representar matrices mediante listas usar listas
 # anidadas, representando cada vector fila nunha tupla
+def ejercicio10():
+    print("\n--- Ejercicio 10 ---")
+    print("\n ")
 
 
 # 11. Escribir un programa que pregunte por unha mostra de
 # números, separados por comas, os garde nunha lista e mostre
 # por pantalla a súa media e desviación típica.
+def ejercicio11():
+    print("\n--- Ejercicio 11 ---")
+    print("\n ")
 
 
 def salir():
@@ -110,18 +216,16 @@ def salir():
 OPCIONES_MENU = {
     "1" : ("Almacenar y mostrar lista", ejercicio1),
     "2" : ("Almacenar y mostrar lista de menor a mayor", ejercicio2),
-    "3" : ("Almacenar y mostrar lista inversa en un rango", ejercicio3),
-    "4" : ("Almacenar, mostrar y eliminar de la lista", ejercicio4),
-    # "5" : ("Primer numero triangular", ejercicio5),
-    # "6" : ("Calcular factorial", ejercicio6),
-    # "7" : ("Fichas domino.", ejercicio7),
-    # "8" : ("Reutilizar fichas", ejercicio8),
-    # "9" : ("Calcular numeros negativos", ejercicio9),
-    # "10": ("Calcular area rectangulo", ejercicio10),
-    # "11": ("Tabla de multiplicar de n", ejercicio11),
-    # "12": ("Rango sueldo trabajadores", ejercicio12),
-    # "13": ("Dibujo triangulo base n", ejercicio13),
-    # "0" : ("Salir", salir)
+    "3" : ("Mostrar lista invertida de rango de números", ejercicio3),
+    "4" : ("Mostrar asignaturas pendientes", ejercicio4),
+    "5" : ("Mostrar lista filtrada a partir del abecedario", ejercicio5),
+    "6" : ("Verificar palíndromo", ejercicio6),
+    "7" : ("Vocales repetidas", ejercicio7),
+    "8" : ("", ejercicio8),
+    "9" : ("Producto escalar", ejercicio9),
+    "10": ("", ejercicio10),
+    "11": ("", ejercicio11),
+    "0" : ("Salir", salir)
 }
 
 
