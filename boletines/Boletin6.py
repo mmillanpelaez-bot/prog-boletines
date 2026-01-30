@@ -1,14 +1,9 @@
 # Boletín 6. Listas e tuplas
 
-# 1. Escribir un programa que almacene as asignaturas dun
-# curso (por exemplo Matemáticas, Física, Química, Historia
-# e Língua) nunha lista, pregunte o usuario a nota que
-# sacou en cada asignatura, e despois as mostre por
-# pantalla co mensaxe En <asignatura> sacaches <nota>
-# onde <asignatura> é cada unha das asignaturas da lista e
-# <nota> cada unha das correspondentes notas
-# introducidas polo usuario.
 def ejercicio1():
+    """
+    1. Escribir un programa que almacene as asignaturas dun curso (por exemplo Matemáticas, Física, Química, Historia e Língua) nunha lista, pregunte o usuario a nota que sacou en cada asignatura, e despois as mostre por pantalla co mensaxe En <asignatura> sacaches <nota> onde <asignatura> é cada unha das asignaturas da lista e <nota> cada unha das correspondentes notas introducidas polo usuario.
+    """
     print("\n--- Ejercicio 1 ---")
     print("\nAlmacenar y mostrar")
 
@@ -23,10 +18,10 @@ def ejercicio1():
         print(f"\nEn {asignaturas[i]} sacaches {notas[i]}")
 
 
-# 2. Escribir un programa que pregunte o usuario os números
-# gañadores da lotería primitiva, os almacene nunha lista e
-# os muestre por pantalla, ordenados de menor a maior.
 def ejercicio2():
+    """
+    2. Escribir un programa que pregunte o usuario os números gañadores da lotería primitiva, os almacene nunha lista e os muestre por pantalla, ordenados de menor a maior.
+    """
     print("\n--- Ejercicio 2 ---")
     print("\nAlmacenar y mostrar lista de menor a mayor")
 
@@ -58,10 +53,10 @@ def ejercicio2():
     print(winner_numbers)
 
 
-# 3. Escribir un programa que almacene nunha lista os
-# números do 1 o 10 e os mostre por pantalla en orden
-# inverso separados por comas.
 def ejercicio3():
+    """
+    3. Escribir un programa que almacene nunha lista os números do 1 o 10 e os mostre por pantalla en orden inverso separados por comas.
+    """
     print("\n--- Ejercicio 3 ---")
     print("\nMostrar lista invertida de rango de números")
 
@@ -71,13 +66,10 @@ def ejercicio3():
     print(f'{', '.join(reverse_numbers)}')
 
 
-# 4. Escribir un programa que almacene as asignaturas dun
-# curso (por exemplo Matemáticas, Física, Química, Historia
-# e Língua) nunha lista, pregunte o usuario a nota que
-# sacou en cada asignatura e elimine da lista as asignaturas
-# aprobadas. O fin, o programa debe mostrar por pantalla
-# as asignaturas que o usuario ten que repetir.
 def ejercicio4():
+    """
+    4. Escribir un programa que almacene as asignaturas dun curso (por exemplo Matemáticas, Física, Química, Historia e Língua) nunha lista, pregunte o usuario a nota que sacou en cada asignatura e elimine da lista as asignaturas aprobadas. O fin, o programa debe mostrar por pantalla as asignaturas que o usuario ten que repetir.
+    """
     print("\n--- Ejercicio 4 ---")
     print("\nMostrar asignaturas pendientes ")
 
@@ -88,7 +80,7 @@ def ejercicio4():
         nota = float(input(f"\nIntroduce a nota que sacaches en {asignatura}: "))
         notas.append(nota)
 
-    for i in range(len(asignaturas) -1, -1, -1):
+    for i in range(len(asignaturas) - 1, -1, -1):
         if notas[i] >= 5:
             asignaturas.pop(i)
             notas.pop(i)
@@ -102,11 +94,10 @@ def ejercicio4():
             print(f"- {asignatura}")
 
 
-# 5. Escribir un programa que almacene o abecedario nunha
-# lista, e cree outra lista a partir dela, onde non aparezan as
-# letras que ocupen posicións múltiplos de 3, e mostre por
-# pantalla a lista resultante.
 def ejercicio5():
+    """
+    5. Escribir un programa que almacene o abecedario nunha lista, e cree outra lista a partir dela, onde non aparezan as letras que ocupen posicións múltiplos de 3, e mostre por pantalla a lista resultante.
+    """
     print("\n--- Ejercicio 5 ---")
     print("\nMostrar lista filtrada a partir del abecedario ")
 
@@ -119,9 +110,11 @@ def ejercicio5():
 
     print(filtered_alphabet)
 
-# 6. Escribir un programa que pida o usuario unha palabra e
-# mostre por pantalla si é un palíndromo.
+
 def ejercicio6():
+    """
+    6. Escribir un programa que pida o usuario unha palabra e mostre por pantalla si é un palíndromo.
+    """
     print("\n--- Ejercicio 6 ---")
     print("\nVerificar palíndromo ")
 
@@ -129,7 +122,7 @@ def ejercicio6():
         word = input('\nWrite a word (or press Enter to exit): ').upper()
         word_inverse = word[::-1]
 
-        if  word == '':
+        if word == '':
             print('!Hasta luego!')
             break
 
@@ -141,10 +134,10 @@ def ejercicio6():
             print(f'The word "{word}" is not a palindrome')
 
 
-# 7. Escribir un programa que pida o usuario unha palabra e
-# mostre por pantalla o número de veces que conten cada
-# vogal.
 def ejercicio7():
+    """
+    7. Escribir un programa que pida o usuario unha palabra e mostre por pantalla o número de veces que conten cada vogal.
+    """
     print("\n--- Ejercicio 7 ---")
     print("\n Vocales repetidas")
 
@@ -155,25 +148,30 @@ def ejercicio7():
         count = word.count(vowel)
         print(f'The vowel {vowel} appears {count} times.')
 
-# 8. Escribir un programa que almacene nunha lista os
-# seguintes prezos, 50, 75, 46, 22, 80, 65, 8, e mostre por
-# pantalla o menor e o maior dos prezos.
+
 def ejercicio8():
+    """
+    8. Escribir un programa que almacene nunha lista os seguintes prezos, 50, 75, 46, 22, 80, 65, 8, e mostre por pantalla o menor e o maior dos prezos.
+    """
     print("\n--- Ejercicio 8 ---")
-    print("\n ")
+    print("\n Mostrar menor/mayor precio")
+
+    prices = [50, 75, 46, 22, 80, 65, 8]
+
+    print(f'The highest price is {max(prices)}, while the lowest price is {min(prices)}.')
 
 
-# 9. Escribir un programa que almacene os vectores (1,2,3) e
-# (-1,0,2) en dúas listas e mostre por pantalla o seu
-# producto escalar.
 def ejercicio9():
+    """
+    9. Escribir un programa que almacene os vectores (1,2,3) e (-1,0,2) en dúas listas e mostre por pantalla o seu producto escalar.
+    """
     print("\n--- Ejercicio 9 ---")
-    print("\n Producto escalar")
+    print("\n Producto escalar de dos vectores")
 
     vector1 = [1, 2, 3]
     vector2 = [-1, 0, 2]
 
-    scalar_product = 0
+    # scalar_product = 0
 
     # for i in range(len(vector1)):
     #     scalar_product += vector1[i] * vector2[i]
@@ -181,28 +179,63 @@ def ejercicio9():
     # for v1, v2 in zip(vector1, vector2): # forma pythonica
     #     scalar_product += v1 * v2
 
-    scalar_product = sum(v1 * v2 for v1, v2 in zip(vector1, vector2)) # forma más pythonica (con List Comprehension)
+    scalar_product = sum(v1 * v2 for v1, v2 in zip(vector1, vector2))  # forma más pythonica (con List Comprehension)
 
     print(f'El producto escalar es: {scalar_product}')
 
-# 10. Escribir un programa que almacene as matrices
-# a = (1,2,3) b = (-1,0)
-# (4,5,6) (0,1)
-# (1,1)
-# nunha lista e mostre por pantalla o seu produto.
-# Nota: Para representar matrices mediante listas usar listas
-# anidadas, representando cada vector fila nunha tupla
+
 def ejercicio10():
+    """
+    10. Escribir un programa que almacene as matrices a = [(1,2,3),(4,5,6)] b = [(-1,0), (0, 1), (1, 1)] nunha lista e mostre por pantalla o seu produto.
+    Nota: Para representar matrices mediante listas usar listas anidadas, representando cada vector fila nunha tupla
+    """
     print("\n--- Ejercicio 10 ---")
-    print("\n ")
+    print("\n Producto escalar de dos matrices")
+
+    matrix_a = [
+        (1, 2, 3),
+        (4, 5, 6)
+    ]
+
+    matrix_b = [
+        (-1, 0),
+        (0, 1),
+        (1, 1)
+    ]
+    # result = []
+
+    # for i in range(len(matrix_a)):
+    #     result.append([])
+    #
+    #     for j in range(len(matrix_b[0])):
+    #         scalar_product = 0
+    #
+    #         for k in range(len(matrix_b)):
+    #             scalar_product += matrix_a[i][k] * matrix_b[k][j]
+    #
+    #         result[i].append(scalar_product)
+
+    scalar_product = [
+        [sum(a * b for a, b in zip(row_a, col_b)) for col_b in zip(*matrix_b)]
+        for row_a in matrix_a
+    ]
+
+    # print(f'El producto escalar es: {result}')
+    for row in scalar_product:
+        print(row)
 
 
-# 11. Escribir un programa que pregunte por unha mostra de
-# números, separados por comas, os garde nunha lista e mostre
-# por pantalla a súa media e desviación típica.
 def ejercicio11():
+    """
+    11. Escribir un programa que pregunte por unha mostra de números, separados por comas, os garde nunha lista e mostre por pantalla a súa media e desviación típica.
+    """
+    # TODO: Terminar
     print("\n--- Ejercicio 11 ---")
-    print("\n ")
+    print("\nMedia y desviación típica")
+
+    numbers = [int(input('Inserte los números separados por comas: '))]
+
+    print(numbers)
 
 
 def salir():
@@ -221,10 +254,10 @@ OPCIONES_MENU = {
     "5" : ("Mostrar lista filtrada a partir del abecedario", ejercicio5),
     "6" : ("Verificar palíndromo", ejercicio6),
     "7" : ("Vocales repetidas", ejercicio7),
-    "8" : ("", ejercicio8),
+    "8" : ("Mostrar menor/mayor precio", ejercicio8),
     "9" : ("Producto escalar", ejercicio9),
-    "10": ("", ejercicio10),
-    "11": ("", ejercicio11),
+    "10": ("Producto escalar de dos matrices", ejercicio10),
+    '11': ("Media y desviación típica", ejercicio11),
     "0" : ("Salir", salir)
 }
 
