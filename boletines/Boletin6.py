@@ -1,4 +1,6 @@
 # Boletín 6. Listas e tuplas
+import math
+import statistics
 
 def ejercicio1():
     """
@@ -63,7 +65,7 @@ def ejercicio3():
     numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
     reverse_numbers = numbers[::-1]
 
-    print(f'{', '.join(reverse_numbers)}')
+    print(f'{", ".join(reverse_numbers)}')
 
 
 def ejercicio4():
@@ -229,13 +231,35 @@ def ejercicio11():
     """
     11. Escribir un programa que pregunte por unha mostra de números, separados por comas, os garde nunha lista e mostre por pantalla a súa media e desviación típica.
     """
-    # TODO: Terminar
     print("\n--- Ejercicio 11 ---")
     print("\nMedia y desviación típica")
 
-    numbers = [int(input('Inserte los números separados por comas: '))]
+    user_input = input('Inserte los números separados por comas: ')
 
-    print(numbers)
+    # forma pythonica
+    # numbers = [float(x) for x in user_input.split(",")]
+    #
+    # avg = statistics.mean(numbers)
+    # deviation = statistics.pstdev(numbers)
+    #
+    # print(f"Media: {avg:.2f}")
+    # print(f"Desviación típica: {deviation:.2f}")
+
+    str_list = user_input.split(",")
+    numbers = [float(x.strip()) for x in str_list]
+
+    avg = sum(numbers) / len(numbers)
+
+    differential_sum = 0
+    for num in numbers:
+        differential_sum += (num - avg) ** 2
+
+    variance = differential_sum / len(numbers)
+    deviation = math.sqrt(variance)
+
+    print(f"\nLista procesada: {numbers}")
+    print(f"Media: {avg:.2f}")
+    print(f"Desviación típica: {deviation:.2f}")
 
 
 def salir():
