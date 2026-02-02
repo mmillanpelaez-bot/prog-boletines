@@ -1,26 +1,34 @@
-# 1. Mostra a lonxitude do texto: “ Isto é Python!”
+
 def ejercicio1():
+    """
+    1. Mostra a lonxitude do texto: “ Isto é Python!
+    ”"""
     print(len("Isto é Python!"))
 
-# 2. Desmenuza o String “Python” mostrándoo por pantalla carácter a
-# carácter.
 def ejercicio2():
+    """
+    2. Desmenuza o String “Python” mostrándoo por pantalla carácter a carácter.
+    """
     palabra = "Python"
     for i in palabra:
         print(i)
 
-# 3. Invertir o texto: “Python para todos”
 def ejercicio3():
+    """
+    3. Invertir o texto: “Python para todos”
+    """
     print("Python para todos"[::-1])
 
-# 4. Elimina os espazos do texto: “Guido Van Rossum creou Python”
 def ejercicio4():
+    """
+    4. Elimina os espazos do texto: “Guido Van Rossum creou Python”
+    """
     print("Guido Van Rossum creou Python".replace(" ",""))
 
-# 5. Conta as vocais e as consoantes do String “Python Python Python”.
-# Ollo cos espazos!
 def ejercicio5():
-
+    """
+    5. Conta as vocais e as consoantes do String “Python Python Python”. Ollo cos espazos!
+    """
     vocales = []
     consonantes = []
     texto = "Python Python Python".lower().replace(' ','')
@@ -38,10 +46,10 @@ def ejercicio5():
     print(f"Vocales: {nvocales} > {vocales}")
     print(f"Consonantes: {nconsonantes} > {consonantes}")
 
-# 6. Divide a cadea de texto “ www. phytonparatodos. com” en duas partes “
-# www. phyton” e “paratodos. com”. Para posteriormente concaténalas e
-# mostralas de novo.
 def ejercicio6():
+    """
+    6. Divide a cadea de texto “ www. phytonparatodos. com” en duas partes “ www. phyton” e “paratodos. com”. Para posteriormente concaténalas e mostralas de novo.
+    """
     texto = "www. phytonparatodos. com"
 
 
@@ -120,16 +128,16 @@ def ejercicio11():
 # d) Inserte o caracter cada 3 díxitos na cadea. Ex. 2552552550 e ‘.’
 # debería devoltar 255.255.255.0
 def ejercicio12():
-
+    pass
 # 13.Modificar as funcións anteriores, para que reciban un parámetro que indique
 # a cantidade máxima de reemplazos ou insercións a realizar.
 def ejercicio13():
-
+    pass
 # 14.Escribir unha función que reciba unha cadea que conten un número entero
 # longo e devolte unha cadea co número e as separacións de miles. Por
 # exemplo, se recibe 1234567890, debe devoltar 1.234.567.890.
 def ejercicio14():
-
+    pass
 # 15.Escribir unha función que dada unha cadea de caracteres, devolte:
 # i) A primeira letra de cada palabra. Por exemplo, si recibe Universal
 # Serial Bus debe devoltar USB.
@@ -139,7 +147,7 @@ def ejercicio14():
 # iii) As palabras que comecen coa letra A. Por exemplo, si recibe Antes de
 # abrir, debe devoltar, Antes abrir.
 def ejercicio15():
-
+    pass
 # 16.Escribir funcións que dada unha cadea de caracteres:
 # a. Devolva soamente as letras consonantes. Por exemplo, se recibe
 # ‘algoritmos’ ou ‘logaritmos’ debe devolver ‘lgrtms’.
@@ -148,11 +156,11 @@ def ejercicio15():
 # c. Substitúa cada vogal pola súa seguinte vogal. Por exemplo, se recibe
 # ‘vestiario’ debe devoltar ‘vostoerou’.
 def ejercicio16():
-
+    pass
 # 17.Indique si se trata dun palíndromo. Por exemplo, ‘anita lava la tina’ é un
 # palíndromo (léese igual de esquerda a dereita que de dereita a esquerda).
 def ejercicio17():
-
+    pass
 # 18. Escribir funcións que dadas dúas cadeas de caracteres:
 # a) Indique si a segunda cadea é unha subcadea da primeira. Por
 # exemplo, ‘cadea’ é unha subcadea de ‘subcadea’.
@@ -160,11 +168,11 @@ def ejercicio17():
 # b) Devolva a que sexa anterior en orden alfábetico. Por exemplo, se
 # recibe ‘kde' e ‘gnome’ debe devoltar ‘gnome’.
 def ejercicio18():
-
+    pass
 # 19.Escribir unha función que reciba unha cadea de uns e ceros (é dicir, un
 # número en representación binaria) e devolte o valor decimal correspondente.
 def ejercicio19():
-
+    pass
 # 20. Escribir as seguintes funcións que fagan o seguinte:
 # i) Recibindo unha cadea de caracteres e un caracter, retorne unha nova
 # cadea formada exclusivamente polo novo caracter. Esta nova cadea
@@ -174,24 +182,24 @@ def ejercicio19():
 # no que aparezan guións e o caracter na posición ou posicións onde
 # coincida na cadea.
 def ejercicio20():
-
+    pass
 # 21.Escribe a función que permita validar un contasinal, recibindo o contrasinal
 # como parámetro. O contrasinal ten que cumprir as condicións de mínimo 8
 # caracteres, o menos unha maiúscula, unha minúscula e un número. A función
 # ten que retornar un booleano especificando si é válida ou non.
 def ejercicio21():
-
+    pass
 # 22.Escribe a función que permita formatear de nomes. A función ten que eliminar
 # os espazos en branco e poñer en maiúsculas o primeiro caracter d o nome e
 # apelido pasado como parámetro. Finalmente retornará unha cadea co nome
 # e apelidos co formato solicitado.
 def ejercicio22():
-
+    pass
 # 23.Crear a función que permíta realizar un analisis simple de texto. O analizador
 # ten a función de contar palabras, caracteres e encontrar a palabra mais
 # longa. Mostrar os resultados por pantalla.
 def ejercicio23():
-
+    pass
 
 def salir():
     """

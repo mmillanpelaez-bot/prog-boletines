@@ -1,6 +1,6 @@
 # Boletín 6. Listas e tuplas
 import math
-import statistics
+
 
 def ejercicio1():
     """
