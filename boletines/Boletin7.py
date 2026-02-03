@@ -168,6 +168,7 @@ def ejercicio12():
     print(replace_spaces("meu arquivo de texto.txt", "\_"))
     print(insert_char("separar", ","))
 
+
 def ejercicio13():
     """
     13.Modificar as funcións anteriores, para que reciban un parámetro que indique a cantidade máxima de reemplazos ou insercións a realizar.
