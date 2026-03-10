@@ -169,17 +169,33 @@ def ejercicio12():
     print(insert_char("separar", ","))
 
 def ejercicio13():
-    """
+    """TODO:
     13.Modificar as funcións anteriores, para que reciban un parámetro que indique a cantidade máxima de reemplazos ou insercións a realizar.
     """
-    pass
+    def replace_spaces(text: str, char: str, max_replaces: int) -> str:
+        return text.replace(" ", char)
+
+    def insert_char(text: str, separator: str, max_replaces: int) -> str:
+        result = separator.join(text)
+
+        return result
+
+    print(replace_spaces("meu arquivo de texto.txt", "\_", 12))
+    print(insert_char("separar", ",", 5))
 
 
 def ejercicio14():
-    """
+    """TODO:
     14.Escribir unha función que reciba unha cadea que conten un número entero longo e devolte unha cadea co número e as separacións de miles. Por exemplo, se recibe 1234567890, debe devoltar 1.234.567.890.
     """
-    pass
+
+    def insert_char(num: str, separator: str) -> str:
+        result = num[::-1].join(separator[::3])
+
+        return result
+
+    input_num = input('Escriba un numero entero largo: ')
+    print(insert_char(input_num, ","))
 
 
 def ejercicio15():
