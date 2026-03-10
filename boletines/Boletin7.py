@@ -159,11 +159,11 @@ def ejercicio12():
         """a) Reemplace tódolos espazos polo caracter. Ex: ‘meu arquivo de texto.txt’ e ‘\_’ debería devoltar ‘meu\_arquivo\_de\_texto.txt’"""
         return text.replace(" ", char)
 
-    def insert_char(text: str, char: str) -> str:
+    def insert_char(text: str, separator: str) -> str:
         """b) Inserte o caracter entre cada letra da cadea. Ex: ‘separar’ e ‘,’ debería devolver s,e,p,a,r,a,r"""
-        for char in text:
-            text.join(char)
+        result = separator.join(text)
 
+        return result
 
     print(replace_spaces("meu arquivo de texto.txt", "\_"))
     print(insert_char("separar", ","))

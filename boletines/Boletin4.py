@@ -1,7 +1,5 @@
 from math import pi
 
-from pygments.lexers.textfmts import TodotxtLexer
-
 
 # 1. Un almacén clasifica os seus produtos segundo a seguinte táboa de
 # vendas anuais:
