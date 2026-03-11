@@ -161,41 +161,37 @@ def ejercicio12():
 
     def insert_char(text: str, separator: str) -> str:
         """b) Inserte o caracter entre cada letra da cadea. Ex: ‘separar’ e ‘,’ debería devolver s,e,p,a,r,a,r"""
-        result = separator.join(text)
-
-        return result
+        return separator.join(text)
+    
+    def replace_digits(text: str, char: str) -> str:
+        """c) Reemplace tódolos díxitos na cadea polo caracter. Ex: súa clave é: 1540 e ‘X’ debería devotar súa clave é: XXXX"""
+        return ''.join(char if c.isdigit() else c for c in text)
+    
+    def insert_char_every_three_digits(text: str, separator: str) -> str:
+        """d) Inserte o caracter cada 3 díxitos na cadea. Ex. 2552552550 e ‘.’ debería devoltar"""
+        digits_only = ''.join(c for c in text if c.isdigit())
+        parts = [digits_only[i:i+3] for i in range(0, len(digits_only), 3)]
+        return separator.join(parts)
 
     print(replace_spaces("meu arquivo de texto.txt", "\_"))
     print(insert_char("separar", ","))
+    print(replace_digits("súa clave é: 1540", "X"))
+    print(insert_char_every_three_digits("2552552550", "."))
 
 def ejercicio13():
-    """TODO:
+    """
     13.Modificar as funcións anteriores, para que reciban un parámetro que indique a cantidade máxima de reemplazos ou insercións a realizar.
     """
-    def replace_spaces(text: str, char: str, max_replaces: int) -> str:
-        return text.replace(" ", char)
-
-    def insert_char(text: str, separator: str, max_replaces: int) -> str:
-        result = separator.join(text)
-
-        return result
-
-    print(replace_spaces("meu arquivo de texto.txt", "\_", 12))
-    print(insert_char("separar", ",", 5))
-
+    pass
 
 def ejercicio14():
-    """TODO:
+    """
     14.Escribir unha función que reciba unha cadea que conten un número entero longo e devolte unha cadea co número e as separacións de miles. Por exemplo, se recibe 1234567890, debe devoltar 1.234.567.890.
     """
+    def format_number_with_thousands_separator(number: int) -> str:
+        return f"{number:,}".replace(",", ".")
 
-    def insert_char(num: str, separator: str) -> str:
-        result = num[::-1].join(separator[::3])
-
-        return result
-
-    input_num = input('Escriba un numero entero largo: ')
-    print(insert_char(input_num, ","))
+    print(format_number_with_thousands_separator(1234567890))
 
 
 def ejercicio15():
@@ -205,7 +201,7 @@ def ejercicio15():
     ii) Unha cadea coa primeira letra de cada palabra en maiúsculas. Por exemplo, se recibe república arxentina, debe devoltar, República Argentina.
     iii) As palabras que comecen coa letra A. Por exemplo, si recibe Antes de abrir, debe devoltar, Antes abrir.
     """
-    pass
+    
 
 
 def ejercicio16():
@@ -222,7 +218,11 @@ def ejercicio17():
     """
     17.Indique si se trata dun palíndromo. Por exemplo, ‘anita lava la tina’ é un palíndromo (léese igual de esquerda a dereita que de dereita a esquerda).
     """
-    pass
+    def is_palindrome(text: str) -> bool:
+        cleaned_text = ''.join(c for c in text if c.isalnum()).lower()
+        return cleaned_text == cleaned_text[::-1]
+
+    print(is_palindrome("anita lava la tina"))
 
 
 def ejercicio18():
