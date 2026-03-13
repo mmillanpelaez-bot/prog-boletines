@@ -201,8 +201,30 @@ def ejercicio15():
     ii) Unha cadea coa primeira letra de cada palabra en maiúsculas. Por exemplo, se recibe república arxentina, debe devoltar, República Argentina.
     iii) As palabras que comecen coa letra A. Por exemplo, si recibe Antes de abrir, debe devoltar, Antes abrir.
     """
-    
+    def acronym_string(text):
+        word_list = text.split(" ")
 
+        # i) A primeira letra de cada palabra. Por exemplo, si recibe Universal Serial Bus debe devoltar USB.
+        acronym = "".join([word[0].upper() for word in word_list])
+
+        # ii) Unha cadea coa primeira letra de cada palabra en maiúsculas. Por exemplo, se recibe república arxentina, debe devoltar, República Argentina.
+        title_case = text.title()
+
+        # iii) As palabras que comecen coa letra A. Por exemplo, si recibe Antes de abrir, debe devoltar, Antes abrir.
+        a_words_list = [word for word in word_list if word[0].lower() == "a"]
+        # a_words_list = [word for word in word_list if word.lower().startswith("a")] -> Pythonic way
+        a_words_string = " ".join(a_words_list)
+
+        return acronym, title_case, a_words_string
+
+    test_string = "Antes de abrir la república arxentina con un universal serial bus"
+
+    acronimo, titulo, palabras_a = acronym_string(test_string)
+
+    print(f"Original: '{test_string}'\n")
+    print(f"i) Acrónimo: {acronimo}")
+    print(f"ii) Mayúsculas: {titulo}")
+    print(f"iii) Comienzan con A: {palabras_a}")
 
 def ejercicio16():
     """
