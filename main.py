@@ -1,12 +1,12 @@
 import os
-from boletines.Boletin1 import menu_boletin1
-from boletines.Boletin2 import menu_boletin2
-from boletines.Boletin3 import menu_boletin3
-from boletines.Boletin4 import menu_boletin4
-from boletines.Boletin5 import menu_boletin5
-from boletines.Boletin6 import menu_boletin6
-# from boletines.Boletin7 import menu_boletin7
-# from boletines.Boletin8 import menu_boletin8
+from boletines.boletin1.main1 import menu_boletin1
+from boletines.boletin2.main2 import menu_boletin2
+from boletines.boletin3.main3 import menu_boletin3
+from boletines.boletin4.main4 import menu_boletin4
+from boletines.boletin5.main5 import menu_boletin5
+from boletines.boletin6.main6 import menu_boletin6
+from boletines.boletin7.main7 import menu_boletin7
+from boletines.boletin8.main8 import menu_boletin8
 
 
 
