@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 9: Obxectos Python"""
+
 # Boletín 9. Obxectos Python
 
 def ejercicio1():

@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 3: Estructuras de control y condicionales"""
+
 # 1. Confirmador de números naturales
 def ejercicio1():
     while True:

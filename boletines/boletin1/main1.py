@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 1: Expresiones, operadores y secuencias algebráicas"""
+
 # 1.
 def ejercicio1():
 

@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 5: Bucles y estructuras iterativas"""
+
 # 1. Escribir un ciclo definido para imprimir por pantalla tódolos números entre	10 e 20.
 def ejercicio1():
     print("\n--- Ejercicio 1 ---")

@@ -1,3 +1,4 @@
+"""Menú de ejercicios del Boletín 7: Cadenas de texto"""
 
 def ejercicio1():
     """

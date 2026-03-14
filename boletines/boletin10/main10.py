@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 10: Excepcións"""
+
 # Boletín 10. Excepcións
 
 def ejercicio1():

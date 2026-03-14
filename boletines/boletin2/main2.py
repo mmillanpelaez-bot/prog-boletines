@@ -1,4 +1,7 @@
+"""Menú de ejercicios del Boletín 2: Expresiones, operadores y secuencias algebráicas"""
+
 import requests
+
 
 # 1. Algoritmo que calcula el área de un triángulo.
 def ejercicio1():

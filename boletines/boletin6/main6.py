@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 6: Listas e tuplas"""
+
 # Boletín 6. Listas e tuplas
 import math
 

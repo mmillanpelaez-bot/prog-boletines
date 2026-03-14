@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 4: Funciones, módulos y excepciones"""
+
 from math import pi
 
 

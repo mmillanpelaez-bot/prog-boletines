@@ -1,3 +1,5 @@
+"""Menú de ejercicios del Boletín 11: Ficheiros Python"""
+
 # Boletín 11. Ficheiros Python
 
 def ejercicio1():
