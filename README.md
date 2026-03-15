@@ -26,20 +26,21 @@ Repositorio con la entrega de los boletines de ejercicios de la asignatura de **
 ## Estructura del proyecto
 
 ```
-PROG-Boletines/
-├── main.py                     ← Menú principal (punto de entrada)
+prog-boletines/
+├── main.py                ← Menú principal (punto de entrada)
+├── utils/menu.py          ← Menú generico de los boletines
 └── boletines/
-    ├── boletin1/main1.py       ← Expresiones y booleanos
-    ├── boletin2/main2.py       ← Algoritmia
-    ├── boletin3/main3.py       ← Condicionales
-    ├── boletin4/main4.py       ← Condicionales avanzados
-    ├── boletin5/main5.py       ← Bucles
-    ├── boletin6/main6.py       ← Listas y tuplas
-    ├── boletin7/main7.py       ← Cadenas de caracteres
-    ├── boletin8/main8.py       ← Tuplas y listas avanzado
-    ├── boletin9/main9.py       ← Objetos (OOP)
-    ├── boletin10/main10.py     ← Excepciones
-    └── boletin11/main11.py     ← Ficheros
+    ├── boletin_01/        ← Expresiones y booleanos
+    ├── boletin_02/        ← Algoritmia
+    ├── boletin_03/        ← Condicionales
+    ├── boletin_04/        ← Condicionales avanzados
+    ├── boletin_05/        ← Bucles
+    ├── boletin_06/        ← Listas y tuplas
+    ├── boletin_07/        ← Cadenas de caracteres
+    ├── boletin_08/        ← Tuplas y listas avanzado
+    ├── boletin_09/        ← Objetos (OOP)
+    ├── boletin_10/        ← Excepciones
+    └── boletin_11/        ← Ficheros
 ```
 
 ---
@@ -49,8 +50,8 @@ PROG-Boletines/
 Clonar el repositorio:
 
 ```bash
-git clone https://github.com/mmillanpelaez-bot/PROG-Boletines.git
-cd PROG-Boletines
+git clone https://github.com/mmillanpelaez-bot/prog-boletines.git
+cd prog-boletines
 ```
 
 Instalar dependencias (solo para el boletín 2):
@@ -68,7 +69,7 @@ python main.py
 O ejecutar un boletín directamente:
 
 ```bash
-python boletines/boletin5/main5.py
+python boletines/boletin_05/bulletin_05.py
 ```
 
 > Requiere **Python 3.10+**. No se necesitan más dependencias externas.
