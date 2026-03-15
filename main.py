@@ -1,78 +1,92 @@
+"""
+main.py
+───────
+Entry point for PROG-Boletines.
+
+How bulletin discovery works
+─────────────────────────────
+1. importlib scans boletines/ for subdirectories named boletinN.
+2. It imports the bulletin_NN.py file inside each one.
+3. That import triggers the register() call at the bottom of each bulletin,
+   which adds it to boletines.REGISTRY.
+4. main_menu() reads REGISTRY to build its option list — no manual entries needed.
+
+To add Bulletin 13:
+  → Create boletines/boletin13/bulletin_13.py and call register() at the bottom.
+  → Nothing else needs to change.
+"""
+
+import importlib
 import os
-from boletines.boletin1.main1 import menu_boletin1
-from boletines.boletin2.main2 import menu_boletin2
-from boletines.boletin3.main3 import menu_boletin3
-from boletines.boletin4.main4 import menu_boletin4
-from boletines.boletin5.main5 import menu_boletin5
-from boletines.boletin6.main6 import menu_boletin6
-from boletines.boletin7.main7 import menu_boletin7
-from boletines.boletin8.main8 import menu_boletin8
+import pkgutil
+
+import boletines
+from utils.menu import run_menu
 
 
+# ---------------------------------------------------------------------------
+# Auto-discovery: import every bulletin_NN module so register() fires
+# ---------------------------------------------------------------------------
 
-def limpiar_pantalla():
-    """Detecta el sistema operativo y limpia la terminal."""
-    if os.name == 'nt':      # Si es Windows
-        os.system('cls')
-    else:                    # Si es Linux/Mac
-        os.system('clear')
+def _discover_bulletins() -> None:
+    """
+    Walk the boletines/ package and import every bulletin_NN.py module.
+
+    pkgutil.iter_modules returns one entry per sub-package (boletin1, boletin2…).
+    For each one we try to import 'boletines.boletinN.bulletin_NN'.
+    Modules that don't follow the naming convention are silently skipped.
+    """
+    boletines_path = os.path.dirname(boletines.__file__)
+
+    for _, package_name, is_pkg in pkgutil.iter_modules([boletines_path]):
+        if not is_pkg:
+            continue  # Skip plain .py files at the top level
+
+        # Derive module name from folder name:
+        # "boletin_01"  → "bulletin_01"
+        # "boletin_12" → "bulletin_12"
+        number = "".join(filter(str.isdigit, package_name))
+        if not number:
+            continue
+
+        module_name = f"boletines.{package_name}.bulletin_{int(number):02d}"
+
+        try:
+            importlib.import_module(module_name)
+        except ModuleNotFoundError:
+            pass  # Bulletin exists as a folder but has no file yet — skip quietly
 
 
-def salir():
-    print("\n👋 Saliendo del menú principal Boletines...")
+# ---------------------------------------------------------------------------
+# Exit action
+# ---------------------------------------------------------------------------
+
+def exit_menu() -> bool:
+    """Signal the main menu loop to stop by returning False."""
+    print("\n👋 Goodbye!")
     return False
 
-OPCIONES_MENU = {
-    "1":  ("Boletín 1: Expresiones y booleanos", menu_boletin1),
-    "2":  ("Boletín 2: Algorítmia", menu_boletin2),
-    "3":  ("Boletín 3: Condicionales", menu_boletin3),
-    "4":  ("Boletín 4: Condicionales", menu_boletin4),
-    "5":  ("Boletín 5: Bucles", menu_boletin5),
-    "6":  ("Boletín 6: Listas y Tuplas", menu_boletin6),
-    # "7":  ("Boletín 7: Cadenas de caracteres", menu_boletin7),
-    # "8":  ("Boletín 8: Tuplas, listas y diccionarios", menu_boletin8),
-    "0":  ("Salir", salir)
-}
 
-def menu_boletines():
+# ---------------------------------------------------------------------------
+# Main menu
+# ---------------------------------------------------------------------------
+
+def main_menu() -> None:
     """
-        Despliega el menú principal de los boletines y gestiona la navegación.
+    Display the bulletin selector and handle navigation.
 
-        Utiliza un patrón Dispatcher con diccionario para seleccionar
-        la función correspondiente a cada ejercicio.
+    MENU_OPTIONS is built from the auto-discovered REGISTRY, with the
+    exit option appended at the end.
+    """
+    _discover_bulletins()
 
-        :return: None
-        """
-    continuar = True
-    
-    while continuar:
-        print("\n--- Menú principal Boletines ---")
-        
-        for clave, valor in OPCIONES_MENU.items():
-            descripcion = valor[0]
-            print(f"{clave}. {descripcion}")
+    # Build options from whatever got registered, sorted by key
+    # Sort numerically (not lexicographically) so "10" comes after "9", not after "1"
+    menu_options = dict(sorted(boletines.REGISTRY.items(), key=lambda item: int(item[0])))
+    menu_options["0"] = ("Exit", exit_menu)  # Always last
 
-        choice = input("\n>> Seleccione un Boletín: ")
+    run_menu("PROG-Boletines — DAM1  |  Felipe Millán", menu_options)
 
-
-        if choice in OPCIONES_MENU:
-            accion = OPCIONES_MENU[choice][1]
-            
-            try:
-                resultado = accion() 
-                
-                if resultado is False:
-                    continuar = False
-                else:
-                    input("\n[Intro para continuar...]")
-                    
-            except NameError:
-                print(f"⚠️  Error: La función {accion.__name__} no está definida todavía.")
-            except Exception as e:
-                print(f"⚠️  Ocurrió un error inesperado en el ejercicio: {e}")
-                
-        else:
-            print("❌ Opción no válida. Inténtelo de nuevo.")
 
 if __name__ == "__main__":
-    menu_boletines()
+    main_menu()
