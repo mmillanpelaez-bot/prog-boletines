@@ -70,7 +70,7 @@ def exercise_03():
 
     print("\n--- Exercise 03: Reversed number list ---")
 
-    numbers         = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    numbers          = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     reversed_numbers = numbers[::-1]  # Slice with step -1 reverses the list
 
     print(", ".join(reversed_numbers))
