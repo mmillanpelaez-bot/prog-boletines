@@ -1,95 +1,125 @@
 # PROG-Boletines
 
-> **Asignatura:** Programación — DAM1  
-> **Alumno:** Manuel Felipe Millán Peláez  
-> **Profesor:** Manuel Guimarei
+> **Subject:** Programming — DAM1  
+> **Student:** Manuel Felipe Millán Peláez  
+> **Teacher:** Manuel Guimarei  
 
 ---
 
-## 📋 Índice
+## Index
 
 - [PROG-Boletines](#prog-boletines)
-  - [📋 Índice](#-índice)
-  - [Descripción](#descripción)
-  - [Estructura del proyecto](#estructura-del-proyecto)
-  - [Instalación y uso](#instalación-y-uso)
-  - [Estado de los boletines](#estado-de-los-boletines)
+  - [Index](#index)
+  - [Description](#description)
+  - [Project structure](#project-structure)
+    - [Architecture notes](#architecture-notes)
+  - [Setup and usage](#setup-and-usage)
+  - [Bulletin status](#bulletin-status)
 
 ---
 
-## Descripción
+## Description
 
-Repositorio con la entrega de los boletines de ejercicios de la asignatura de **Programación** (DAM1). Todos los boletines están resueltos en Python y son accesibles desde un menú principal interactivo.
+Repository with the submitted exercise bulletins for the **Programming** subject (DAM1). All bulletins are written in Python and are accessible from an interactive main menu.
 
 ---
 
-## Estructura del proyecto
+## Project structure
 
 ```
 prog-boletines/
-├── main.py                ← Menú principal (punto de entrada)
-├── utils/menu.py          ← Menú generico de los boletines
+├── main.py                   ← Entry point + auto-discovery
+├── requirements.txt
+├── utils/
+│   ├── __init__.py
+│   └── menu.py               ← Shared menu engine (run_menu, make_exit)
 └── boletines/
-    ├── boletin_01/        ← Expresiones y booleanos
-    ├── boletin_02/        ← Algoritmia
-    ├── boletin_03/        ← Condicionales
-    ├── boletin_04/        ← Condicionales avanzados
-    ├── boletin_05/        ← Bucles
-    ├── boletin_06/        ← Listas y tuplas
-    ├── boletin_07/        ← Cadenas de caracteres
-    ├── boletin_08/        ← Tuplas y listas avanzado
-    ├── boletin_09/        ← Objetos (OOP)
-    ├── boletin_10/        ← Excepciones
-    └── boletin_11/        ← Ficheros
+    ├── __init__.py            ← Central registry (auto-populated at runtime)
+    │
+    ├── boletin_01/ … boletin_08/   ← Single-file bulletins
+    │   ├── __init__.py             (empty)
+    │   └── bulletin_NN.py
+    │
+    ├── boletin_09/            ← OOP
+    │   ├── __init__.py        ← Aggregator: exposes exercise_01–03
+    │   ├── bulletin_09.py
+    │   ├── libro.py           ← class Book
+    │   ├── consumo.py         ← class FuelConsumption
+    │   └── car_account.py     ← classes Car, BankAccount
+    │
+    ├── boletin_10/            ← Exceptions
+    │   ├── __init__.py        ← Aggregator: exposes exercise_01–02
+    │   ├── bulletin_10.py
+    │   ├── exceptions.py      ← InvalidDniError, InvalidLicenceError, InvalidDateError
+    │   ├── person_athlete.py  ← classes Person, Athlete
+    │   └── date.py            ← class Date
+    │
+    └── boletin_11/            ← File I/O
+        ├── __init__.py        ← Aggregator: exposes exercise_01–06
+        ├── bulletin_11.py
+        ├── notes.py           ← Personal note manager
+        ├── word_frequency.py  ← Word frequency counter
+        ├── task_manager.py    ← class Task + task manager
+        ├── customer_manager.py← class Customer + customer manager
+        ├── inventory.py       ← CSV inventory manager
+        └── contact_book.py    ← JSON contact book
 ```
+
+### Architecture notes
+
+**Auto-discovery** — `main.py` scans `boletines/` at startup using `pkgutil`, imports each `bulletin_NN.py`, and each module self-registers via `boletines.register()`. Adding a new bulletin only requires creating its folder and file; nothing else needs to change.
+
+**Aggregator pattern** — multi-file bulletins (09–11) use `__init__.py` as the single public interface. `bulletin_NN.py` imports from the package, not from individual files directly.
+
+**Shared menu engine** — `utils/menu.py` provides `run_menu()` and `make_exit()`, used by all bulletins.
 
 ---
 
-## Instalación y uso
+## Setup and usage
 
-Clonar el repositorio:
+Clone the repository:
 
 ```bash
 git clone https://github.com/mmillanpelaez-bot/prog-boletines.git
 cd prog-boletines
 ```
 
-Instalar dependencias (solo para el boletín 2):
+Install dependencies:
 
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
-Ejecutar el menú principal:
+Run the main menu:
 
 ```bash
 python main.py
 ```
 
-O ejecutar un boletín directamente:
+Run a specific bulletin directly:
 
 ```bash
 python boletines/boletin_05/bulletin_05.py
 ```
 
-> Requiere **Python 3.10+**. No se necesitan más dependencias externas.
+> Requires **Python 3.10+**. The only external dependency is `requests` (used in bulletin 02 for the live exchange rate).
 
 ---
 
-## Estado de los boletines
+## Bulletin status
 
-| #   | Tema                     | Ejercicios | Estado         |
-| --- | ------------------------ | ---------- | -------------- |
-| 1   | Expresiones y booleanos  | 5 / 5      | ✅ Completo    |
-| 2   | Algoritmia               | 5 / 5      | ✅ Completo    |
-| 3   | Condicionales            | 5 / 5      | ✅ Completo    |
-| 4   | Condicionales avanzados  | 4 / 4      | ✅ Completo    |
-| 5   | Bucles                   | 13 / 13    | ✅ Completo    |
-| 6   | Listas y tuplas          | 11 / 11    | ✅ Completo    |
-| 7   | Cadenas de caracteres    | 17 / 23    | 🔄 En progreso |
-| 8   | Tuplas y listas avanzado | 11 / 11    | ✅ Completo    |
-| 9   | Objetos Python           | 0 / 3      | 📋 Pendiente   |
-| 10  | Excepciones              | 0 / 2      | 📋 Pendiente   |
-| 11  | Ficheros Python          | 0 / 6      | 📋 Pendiente   |
+| #  | Topic                    | Exercises | Status         |
+|----|--------------------------|-----------|----------------|
+| 1  | Expressions & booleans   | 5 / 5     | ✅ Complete    |
+| 2  | Algorithmics             | 5 / 5     | ✅ Complete    |
+| 3  | Conditionals             | 5 / 5     | ✅ Complete    |
+| 4  | Advanced conditionals    | 4 / 4     | ✅ Complete    |
+| 5  | Loops                    | 13 / 13   | ✅ Complete    |
+| 6  | Lists and tuples         | 11 / 11   | ✅ Complete    |
+| 7  | Strings                  | 23 / 23   | ✅ Complete    |
+| 8  | Tuples and lists (adv.)  | 11 / 11   | ✅ Complete    |
+| 9  | Object-oriented Python   | 3 / 3     | ✅ Complete    |
+| 10 | Exceptions               | 2 / 2     | ✅ Complete    |
+| 11 | File I/O                 | 6 / 6     | ✅ Complete    |
 
-**Leyenda:** ✅ Completo &nbsp;|&nbsp; 🔄 En progreso &nbsp;|&nbsp; 📋 Pendiente
+**Legend:** ✅ Complete &nbsp;|&nbsp; 🔄 In progress &nbsp;|&nbsp; 📋 Pending

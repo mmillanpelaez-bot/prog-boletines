@@ -1,7 +1,7 @@
 """Bulletin 05 exercises: Loops and iterative structures"""
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -361,12 +361,6 @@ def exercise_13():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 05...")
-    return False
-
-
 MENU_OPTIONS = {
     "1" : ("Numbers from 10 to 20",                exercise_01),
     "2" : ("Fahrenheit → Celsius",                 exercise_02),
@@ -381,11 +375,11 @@ MENU_OPTIONS = {
     "11": ("Multiplication table",                 exercise_11),
     "12": ("Salary analysis",                      exercise_12),
     "13": ("Asterisk triangle",                    exercise_13),
-    "0" : ("Exit",                                 exit_menu),
+    "0" : ("Exit", make_exit("Bulletin 05 — Loops")),
 }
 
 
-def bulletin_menu_05():
+def bulletin_menu_05() -> None:
     """Entry point for Bulletin 05. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 05 — Loops", MENU_OPTIONS)
 

@@ -1,7 +1,7 @@
 """Bulletin 09 exercises: Object-Oriented Python"""
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -42,21 +42,15 @@ def exercise_03():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 09...")
-    return False
-
-
 MENU_OPTIONS = {
     "1": ("Class Libro",              exercise_01),
     "2": ("Class Consumo",            exercise_02),
     "3": ("Class Coche / Conta",      exercise_03),
-    "0": ("Exit",                     exit_menu),
+    "0": ("Exit", make_exit("Bulletin 09 — Object-Oriented Python")),
 }
 
 
-def bulletin_menu_09():
+def bulletin_menu_09() -> None:
     """Entry point for Bulletin 09. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 09 — Object-Oriented Python", MENU_OPTIONS)
 

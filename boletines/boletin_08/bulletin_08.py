@@ -1,7 +1,7 @@
 """Bulletin 08 exercises: Tuples and lists (advanced)"""
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -362,12 +362,6 @@ def exercise_11():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 08...")
-    return False
-
-
 MENU_OPTIONS = {
     "1" : ("Is tuple sorted ascending?",           exercise_01),
     "2" : ("Do domino tiles match?",               exercise_02),
@@ -380,11 +374,11 @@ MENU_OPTIONS = {
     "9" : ("Run-Length Encoding",                  exercise_09),
     "10": ("Matrix operations",                    exercise_10),
     "11": ("Word wrap",                            exercise_11),
-    "0" : ("Exit",                                 exit_menu),
+    "0" : ("Exit", make_exit("Bulletin 08 — Tuples & Lists (Advanced)")),
 }
 
 
-def bulletin_menu_08():
+def bulletin_menu_08() -> None:
     """Entry point for Bulletin 08. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 08 — Tuples & Lists (Advanced)", MENU_OPTIONS)
 

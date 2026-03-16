@@ -3,7 +3,7 @@
 import math
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -264,12 +264,6 @@ def exercise_11():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 06...")
-    return False
-
-
 MENU_OPTIONS = {
     "1" : ("Grades by subject",                    exercise_01),
     "2" : ("Lottery numbers (sorted)",             exercise_02),
@@ -282,11 +276,11 @@ MENU_OPTIONS = {
     "9" : ("Dot product",                          exercise_09),
     "10": ("Matrix multiplication",                exercise_10),
     "11": ("Mean and standard deviation",          exercise_11),
-    "0" : ("Exit",                                 exit_menu),
+    "0" : ("Exit", make_exit("Bulletin 06 — Lists & Tuples")),
 }
 
 
-def bulletin_menu_06():
+def bulletin_menu_06() -> None:
     """Entry point for Bulletin 06. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 06 — Lists & Tuples", MENU_OPTIONS)
 

@@ -1,7 +1,7 @@
 """Bulletin 10 exercises: Exceptions"""
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -37,20 +37,14 @@ def exercise_02():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 10...")
-    return False
-
-
 MENU_OPTIONS = {
     "1": ("Persoa / Deportista with exceptions",  exercise_01),
     "2": ("Data class with validation",           exercise_02),
-    "0": ("Exit",                                 exit_menu),
+    "0": ("Exit", make_exit("Bulletin 10 — Exceptions")),
 }
 
 
-def bulletin_menu_10():
+def bulletin_menu_10() -> None:
     """Entry point for Bulletin 10. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 10 — Exceptions", MENU_OPTIONS)
 

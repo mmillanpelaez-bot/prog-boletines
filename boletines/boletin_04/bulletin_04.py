@@ -3,7 +3,7 @@
 from math import pi
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -159,22 +159,16 @@ def exercise_04():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 04...")
-    return False
-
-
 MENU_OPTIONS = {
     "1": ("Product classifier",             exercise_01),
     "2": ("Geometric area calculator",      exercise_02),
     "3": ("Absolute value (ternary)",       exercise_03),
     "4": ("Number to words (1–99)",         exercise_04),
-    "0": ("Exit",                           exit_menu),
+    "0": ("Exit", make_exit("Bulletin 04 — Advanced Conditionals")),
 }
 
 
-def bulletin_menu_04():
+def bulletin_menu_04() -> None:
     """Entry point for Bulletin 04. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 04 — Advanced Conditionals", MENU_OPTIONS)
 

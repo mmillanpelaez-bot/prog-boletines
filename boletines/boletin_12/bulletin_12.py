@@ -1,21 +1,15 @@
 """Bulletin 12 exercises: (topic pending)"""
 
 import boletines
-from utils.menu import run_menu
-
-
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 12...")
-    return False
+from utils.menu import run_menu, make_exit
 
 
 MENU_OPTIONS = {
-    "0": ("Exit", exit_menu),
+    "0": ("Exit", make_exit("Bulletin 12 — (topic pending)")),
 }
 
 
-def bulletin_menu_12():
+def bulletin_menu_12() -> None:
     """Entry point for Bulletin 12. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 12", MENU_OPTIONS)
 

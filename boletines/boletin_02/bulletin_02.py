@@ -3,8 +3,7 @@
 import requests
 
 import boletines
-from utils.menu import run_menu
-
+from utils.menu import run_menu, make_exit
 
 # ---------------------------------------------------------------------------
 # 01. Triangle area
@@ -128,23 +127,17 @@ def exercise_05():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 02...")
-    return False
-
-
 MENU_OPTIONS = {
     "1": ("Triangle area",                  exercise_01),
     "2": ("Square area",                    exercise_02),
     "3": ("EUR → USD converter",            exercise_03),
     "4": ("Arithmetic sequence",            exercise_04),
     "5": ("Nautical miles → Metres",        exercise_05),
-    "0": ("Exit",                           exit_menu),
+    "0": ("Exit", make_exit("Bulletin 02 — Algorithmics")),
 }
 
 
-def bulletin_menu_02():
+def bulletin_menu_02() -> None:
     """Entry point for Bulletin 02. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 02 — Algorithmics", MENU_OPTIONS)
 

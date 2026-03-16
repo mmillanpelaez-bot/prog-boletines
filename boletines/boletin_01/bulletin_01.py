@@ -1,7 +1,7 @@
 """Bulletin 01 exercises: Expressions, operators and algebraic sequences"""
 
 import boletines
-from utils.menu import run_menu
+from utils.menu import run_menu, make_exit
 
 
 # ---------------------------------------------------------------------------
@@ -135,21 +135,13 @@ def exercise_05():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu() -> bool:
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 01...")
-    return False
-
-
-# Structure: "key": ("User-visible description", function_reference)
-# NOTE: pass the function object, not a call — no () here
 MENU_OPTIONS = {
     "1": ("Arithmetic expression results",  exercise_01),
     "2": ("Invalid variable names",         exercise_02),
     "3": ("Algebraic expressions",          exercise_03),
     "4": ("Boolean expression evaluation",  exercise_04),
     "5": ("Expressions with variables",     exercise_05),
-    "0": ("Exit",                           exit_menu),
+    "0": ("Exit", make_exit("Bulletin 01 — Expressions & Booleans")),
 }
 
 
@@ -158,9 +150,11 @@ def bulletin_menu_01() -> None:
     run_menu("Bulletin 01 — Expressions & Booleans", MENU_OPTIONS)
 
 
+if __name__ == "__main__":
+    bulletin_menu_01()
+
+
 # ---------------------------------------------------------------------------
 # Self-registration
-# Runs once when this module is imported (by main.py's _discover_bulletins).
-# Adds this bulletin to the central REGISTRY so main_menu() can list it.
 # ---------------------------------------------------------------------------
 boletines.register("1", "Bulletin 01 — Expressions & Booleans", bulletin_menu_01)

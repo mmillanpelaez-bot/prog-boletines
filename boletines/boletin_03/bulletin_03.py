@@ -1,8 +1,7 @@
 """Bulletin 03 exercises: Control structures and conditionals"""
 
 import boletines
-from utils.menu import run_menu
-
+from utils.menu import run_menu, make_exit
 
 # ---------------------------------------------------------------------------
 # 01. Natural number checker
@@ -128,23 +127,17 @@ def exercise_05():
 # Menu configuration
 # ---------------------------------------------------------------------------
 
-def exit_menu():
-    """Signal the menu loop to stop by returning False."""
-    print("\n👋 Exiting Bulletin 03...")
-    return False
-
-
 MENU_OPTIONS = {
     "1": ("Natural number checker",         exercise_01),
     "2": ("Subtraction and sum",            exercise_02),
     "3": ("Sign indicator",                 exercise_03),
     "4": ("Weight comparison",              exercise_04),
     "5": ("Greatest of three numbers",      exercise_05),
-    "0": ("Exit",                           exit_menu),
+    "0": ("Exit", make_exit("Bulletin 03 — Conditionals")),
 }
 
 
-def bulletin_menu_03():
+def bulletin_menu_03() -> None:
     """Entry point for Bulletin 03. Delegates menu logic to run_menu (utils/menu.py)."""
     run_menu("Bulletin 03 — Conditionals", MENU_OPTIONS)
 

@@ -9,7 +9,7 @@ The Dispatcher pattern:
   3. Look up the matching function and call it.
   4. Stop the loop when any function returns False.
 
-One place to change → change propagates to all 12 bulletins automatically.
+One place to change → change propagates to all bulletins automatically.
 """
 
 
@@ -31,30 +31,51 @@ def run_menu(title: str, options: dict) -> None:
     while running:
         print(f"\n--- {title} ---")
 
-        # Build the list dynamically from the dict.
-        # Adding an entry to MENU_OPTIONS is all that's needed to show it here.
         for key, (description, _) in options.items():
             print(f"  {key:>2}. {description}")
 
         choice = input("\n>> Select an option: ")
 
-        # Guard clause: reject invalid input before doing anything else.
-        # Keeps the happy path at the left margin (no nested else needed).
         if choice not in options:
             print("❌ Invalid option. Please try again.")
             continue
 
-        action = options[choice][1]  # Retrieve function reference (not yet called)
+        action = options[choice][1]
 
         try:
-            result = action()  # Call the function
+            result = action()
 
-            # Convention: returning False signals "exit this menu"
             if result is False:
                 running = False
             else:
                 input("\n[Press Enter to continue...]")
 
         except Exception as error:
-            # Catch errors inside an exercise so the menu keeps running
             print(f"⚠️  Unexpected error: {error}")
+
+
+def make_exit(bulletin_name: str):
+    """
+    Factory that returns a ready-made exit function for a bulletin menu.
+
+    Eliminates the boilerplate of defining an identical exit_menu() in
+    every bulletin. The returned function prints a farewell message and
+    returns False, which signals run_menu() to stop its loop.
+
+    Parameters
+    ----------
+    bulletin_name : str
+        Human-readable name shown in the goodbye message.
+        E.g. "Bulletin 01 — Expressions & Booleans"
+
+    Usage
+    -----
+        MENU_OPTIONS = {
+            "1": ("Some exercise", exercise_01),
+            "0": ("Exit", make_exit("Bulletin 01 — Expressions & Booleans")),
+        }
+    """
+    def _exit() -> bool:
+        print(f"\n👋 Exiting {bulletin_name}...")
+        return False
+    return _exit
