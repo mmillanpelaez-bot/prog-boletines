@@ -32,6 +32,7 @@ htmlcov/
 Thumbs.db
 
 # ── Bulletin 11 data files (generated at runtime) ─────────────────────────────
+# TODO: boletines/**/data/
 notes.txt
 tasks.dat
 customers.dat

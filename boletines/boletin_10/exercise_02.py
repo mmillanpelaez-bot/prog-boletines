@@ -95,38 +95,3 @@ class Date:
 
     def __repr__(self) -> str:
         return f"Date(day={self._day}, month={self._month}, year={self._year})"
-
-
-def date_main():
-    print("\n--- Exercise 02: Date class with validation ---")
-
-    while True:
-        try:
-            day   = int(input("  Day   (1–31)      : "))
-            month = int(input("  Month (1–12)      : "))
-            year  = int(input("  Year  (1970–2999) : "))
-            date  = Date(day, month, year)
-            date.display()
-            break
-        except (InvalidDateError, ValueError) as e:
-            print(f"  ERROR: {e}")
-
-    print("\n  -- Testing invalid date (Feb 30) --")
-    try:
-        d = Date(1, 1, 2024)
-        d.month = 2
-        d.day   = 30
-    except InvalidDateError as e:
-        print(f"  ERROR caught correctly: {e}")
-
-    print("\n  -- Testing leap year (Feb 29, 2024) --")
-    try:
-        Date(29, 2, 2024).display()
-    except InvalidDateError as e:
-        print(f"  ERROR: {e}")
-
-    print("\n  -- Testing non-leap year (Feb 29, 2023) --")
-    try:
-        Date(29, 2, 2023).display()
-    except InvalidDateError as e:
-        print(f"  ERROR caught correctly: {e}")

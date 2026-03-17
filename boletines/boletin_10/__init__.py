@@ -1,2 +1,3 @@
-from .exercise_01 import athlete_main
-from .exercise_02 import date_main
+from .exercise_01 import Person, Athlete
+from .exercise_02 import Date
+from .exceptions import InvalidDniError, InvalidLicenceError, InvalidDateError

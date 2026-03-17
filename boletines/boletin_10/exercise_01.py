@@ -82,30 +82,3 @@ class Athlete(Person):
 
     def __str__(self) -> str:
         return f"Athlete(name='{self._name}', dni='{self._dni}', licence='{self._licence}')"
-
-
-def athlete_main():
-    print("\n--- Exercise 01: Person and Athlete classes ---")
-
-    print("\n  -- Creating a Person --")
-    while True:
-        try:
-            name = input("  Name : ")
-            dni  = input("  DNI  : ").strip().upper()
-            p    = Person(name, dni)
-            p.display()
-            break
-        except InvalidDniError as e:
-            print(f"  ERROR: {e}")
-
-    print("\n  -- Creating an Athlete --")
-    while True:
-        try:
-            name    = input("  Name    : ")
-            dni     = input("  DNI     : ").strip().upper()
-            licence = input("  Licence (e.g. 2024fut000123): ").strip().lower()
-            a       = Athlete(name, dni, licence)
-            a.display()
-            break
-        except (InvalidDniError, InvalidLicenceError) as e:
-            print(f"  ERROR: {e}")

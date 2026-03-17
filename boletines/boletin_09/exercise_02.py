@@ -81,20 +81,3 @@ class FuelConsumption:
         print(f"  Travel time     : {self.get_time():.2f} h")
         print(f"  Avg. consumption: {self.avg_consumption():.2f} L/100km")
         print(f"  Total fuel cost : {self.consumption_euros():.2f} €")
-
-
-def fuel_consumption_main():
-    print("\n--- Exercise 02: Fuel Consumption class ---")
-
-    while True:
-        try:
-            km         = float(input("Distance driven (km)     : "))
-            litres     = float(input("Fuel consumed (litres)   : "))
-            avg_speed  = float(input("Average speed (km/h)     : "))
-            fuel_price = float(input("Fuel price per litre (€) : "))
-            dashboard  = FuelConsumption(km, litres, avg_speed, fuel_price)
-            break
-        except ValueError as e:
-            print(f"  ERROR: {e}")
-
-    dashboard.display()

@@ -68,29 +68,3 @@ class Book:
 
     def __str__(self) -> str:
         return f'"{self._title}" by {self._author} ({self._year})'
-
-
-def book_main():
-    print("\n--- Exercise 01: Book class ---")
-
-    title  = input("Title  : ")
-    author = input("Author : ")
-
-    while True:
-        try:
-            year   = int(input("Year   : "))
-            pages  = int(input("Pages  : "))
-            rating = float(input("Rating (0–10): "))
-            book   = Book(title, author, year, pages, rating)
-            break
-        except ValueError as e:
-            print(f"  ERROR: {e}")
-
-    book.display()
-
-    print("\n  -- Updating rating via setter --")
-    try:
-        book.rating = float(input("  New rating: "))
-        print(f"  Updated: {book}")
-    except ValueError as e:
-        print(f"  ERROR: {e}")

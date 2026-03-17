@@ -63,31 +63,3 @@ class BankAccount:
 
     def __str__(self) -> str:
         return f"BankAccount(holder='{self._holder}', balance={self._balance:.2f}€)"
-
-
-def bank_account_main():
-    print("\n--- Exercise 03: Car and BankAccount classes ---")
-
-    print("\n  -- Car --")
-    car = Car()
-    car.accelerate(50)
-    car.accelerate(30)
-    car.brake(20)
-    car.brake(100)
-    print(f"  Final: {car}")
-
-    print("\n  -- BankAccount --")
-    try:
-        acc1 = BankAccount("Alice", 1000.00)
-        acc2 = BankAccount("Bob",    500.00)
-        print(f"  Created: {acc1}")
-        print(f"  Created: {acc2}")
-        acc1.deposit(250.00)
-        acc2.withdraw(100.00)
-        acc1.transfer(acc2, 300.00)
-        print(f"\n  Final: {acc1}")
-        print(f"  Final: {acc2}")
-        print("\n  -- Testing overdraft protection --")
-        acc2.withdraw(10000.00)
-    except ValueError as e:
-        print(f"  ERROR caught: {e}")
